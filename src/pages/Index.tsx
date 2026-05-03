@@ -240,9 +240,23 @@ const Index = () => {
             <div className="mb-3 flex items-center gap-2 text-sm text-muted-foreground">
               <GraduationCap className="h-4 w-4" /> Education
             </div>
-            <p className="font-semibold">B.Tech, Information Technology</p>
-            <p className="text-sm text-muted-foreground">KIIT University · 2022–2026</p>
-            <p className="mt-1 font-mono text-xs text-primary">CGPA 6.98 / 10</p>
+            <div className="space-y-4">
+              <div>
+                <p className="font-semibold">B.Tech, Information Technology</p>
+                <p className="text-sm text-muted-foreground">KIIT University · 2022–2026</p>
+                <p className="mt-1 font-mono text-xs text-primary">CGPA 6.98 / 10</p>
+              </div>
+              <div>
+                <p className="font-semibold">HSC (Class XII, CBSE)</p>
+                <p className="text-sm text-muted-foreground">Oneness International School · 2022</p>
+                <p className="mt-1 font-mono text-xs text-primary">82%</p>
+              </div>
+              <div>
+                <p className="font-semibold">SSC (Class X, CBSE)</p>
+                <p className="text-sm text-muted-foreground">Oneness International School · 2020</p>
+                <p className="mt-1 font-mono text-xs text-primary">89.6%</p>
+              </div>
+            </div>
             <div className="mt-6 flex flex-wrap gap-2">
               {techStack.map((t) => (
                 <span key={t} className="rounded-md border border-border bg-secondary/40 px-2 py-1 font-mono text-[11px]">
