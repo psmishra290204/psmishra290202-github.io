@@ -31,12 +31,12 @@ const techStack = [
 
 const experience = [
   {
-    role: "Business Analyst Intern",
-    company: "Coreline Solutions Pvt Ltd",
-    period: "Jun 2025 – Aug 2025",
+    role: "Penetration Tester Intern",
+    company: "Ceeras Cybersecurity",
+    period: "Jan 2025 – Apr 2025",
     points: [
-      "Translated business requirements into technical specs for engineering teams.",
-      "Built dashboards and analyzed product KPIs to drive data-informed decisions.",
+      "Performed VAPT on web applications and internal network assets.",
+      "Tools: Nmap, Burp Suite, Metasploit, Wireshark, OWASP ZAP.",
     ],
   },
   {
@@ -49,15 +49,18 @@ const experience = [
     ],
   },
   {
-    role: "Penetration Tester Intern",
-    company: "Ceeras Cybersecurity",
-    period: "Jan 2025 – Apr 2025",
+    role: "Business Analyst Intern",
+    company: "Coreline Solutions Pvt Ltd",
+    period: "Jun 2025 – Aug 2025",
     points: [
-      "Performed VAPT on web applications and internal network assets.",
-      "Tools: Nmap, Burp Suite, Metasploit, Wireshark, OWASP ZAP.",
+      "Translated business requirements into technical specs for engineering teams.",
+      "Built dashboards and analyzed product KPIs to drive data-informed decisions.",
     ],
   },
 ];
+
+// Edit this watermark text to anything you like
+const WATERMARK_TEXT = "PARTHASARATHI";
 
 const projects = [
   {
@@ -125,6 +128,19 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <CustomCursor />
+
+      {/* Editable background watermark */}
+      <div
+        aria-hidden
+        className="pointer-events-none fixed inset-0 -z-10 flex items-center justify-center overflow-hidden select-none"
+      >
+        <span
+          className="font-bold tracking-tighter text-foreground/[0.04] -rotate-12 whitespace-nowrap"
+          style={{ fontSize: "clamp(6rem, 22vw, 22rem)", fontFamily: "'Space Grotesk', sans-serif" }}
+        >
+          {WATERMARK_TEXT}
+        </span>
+      </div>
 
       {/* Nav */}
       <nav className="sticky top-0 z-50 border-b border-border/40 bg-background/70 backdrop-blur-xl">
@@ -312,7 +328,7 @@ const Index = () => {
 
       {/* Contact */}
       <section id="contact" className="container mx-auto max-w-6xl px-6 py-24">
-        <div className="rounded-2xl border border-border/60 bg-card/50 p-10 text-center shadow-card md:p-16">
+        <div className="rounded-2xl border-2 border-border bg-card p-10 text-center shadow-card md:p-16">
           <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">06 — Contact</p>
           <h2 className="mt-3 text-3xl font-bold md:text-5xl">
             Let's <span className="text-gradient">build</span> something.
