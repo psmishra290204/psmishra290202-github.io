@@ -1,16 +1,343 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { CustomCursor } from "@/components/CustomCursor";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card } from "@/components/ui/card";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  ExternalLink,
+  Code2,
+  Brain,
+  Briefcase,
+  GraduationCap,
+  Award,
+  Sparkles,
+  ArrowUpRight,
+} from "lucide-react";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const strengths = [
+  "Python",
+  "Full-Stack Development",
+  "Data Structures",
+  "React.js",
+  "MongoDB",
+];
+
+const techStack = [
+  "FastAPI", "React", "TypeScript", "Docker", "AWS", "Node.js",
+  "PostgreSQL", "MongoDB", "TensorFlow", "PyTorch", "Git", "Linux",
+];
+
+const experience = [
+  {
+    role: "Business Analyst Intern",
+    company: "Coreline Solutions Pvt Ltd",
+    period: "Jun 2025 – Aug 2025",
+    points: [
+      "Translated business requirements into technical specs for engineering teams.",
+      "Built dashboards and analyzed product KPIs to drive data-informed decisions.",
+    ],
+  },
+  {
+    role: "Business Development Executive Intern",
+    company: "ClickUptel",
+    period: "May 2025",
+    points: [
+      "Drove client outreach and partnership pipeline for telecom SaaS products.",
+      "Coordinated cross-functional efforts between sales and product teams.",
+    ],
+  },
+  {
+    role: "Penetration Tester Intern",
+    company: "Ceeras Cybersecurity",
+    period: "Jan 2025 – Apr 2025",
+    points: [
+      "Performed VAPT on web applications and internal network assets.",
+      "Tools: Nmap, Burp Suite, Metasploit, Wireshark, OWASP ZAP.",
+    ],
+  },
+];
+
+const projects = [
+  {
+    name: "PoseVision",
+    tag: "Real-time Pose Estimation",
+    desc: "Browser-based pose estimator running fully client-side with live webcam input and skeletal overlay rendering.",
+    stack: ["React.js", "TensorFlow.js", "MediaPipe", "Webcam API", "CSS"],
+  },
+  {
+    name: "EEG Emotion Recognition",
+    tag: "Signal Processing + Deep Learning",
+    desc: "End-to-end pipeline using PLV & Coherence connectivity features with a hybrid CNN + SVM classifier.",
+    stack: ["Python", "CNN", "SVM", "PLV", "Coherence", "86% accuracy"],
+  },
+  {
+    name: "Eye Disease Detection",
+    tag: "Medical Imaging",
+    desc: "CNN-based classifier for retinal images detecting common eye diseases from fundus photography.",
+    stack: ["Python", "CNN", "Keras", "OpenCV"],
+  },
+];
+
+const certifications = [
+  { name: "Financial Accounting – Advanced Topics", issuer: "UIUC" },
+  { name: "Data Science with Python", issuer: "Coincent.ai" },
+  { name: "Introduction in Applied Business Analytics", issuer: "UIUC" },
+  { name: "Intro to Business Analytics: Communicating with Data", issuer: "UIUC" },
+  { name: "Generative AI: Introduction and Applications", issuer: "IBM" },
+  { name: "Generative AI: Prompt Engineering Basics", issuer: "IBM" },
+  { name: "Prompt Engineering for ChatGPT", issuer: "Vanderbilt" },
+  { name: "Cybersecurity Intern Certificate", issuer: "Ceeras" },
+  { name: "Android Developer Virtual Internship", issuer: "Google for Developers" },
+  { name: "Python Full Stack Developer Virtual Internship", issuer: "EduSkills Foundation" },
+  { name: "Fundamentals of Cybersecurity (EDU-102)", issuer: "Zscaler" },
+];
+
+const Section = ({
+  id,
+  icon: Icon,
+  label,
+  title,
+  children,
+}: {
+  id: string;
+  icon: any;
+  label: string;
+  title: string;
+  children: React.ReactNode;
+}) => (
+  <section id={id} className="container mx-auto max-w-6xl px-6 py-24">
+    <div className="mb-12 flex items-center gap-3">
+      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-primary">
+        <Icon className="h-5 w-5" />
+      </div>
+      <div>
+        <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">{label}</p>
+        <h2 className="text-3xl font-bold md:text-4xl">{title}</h2>
+      </div>
+    </div>
+    {children}
+  </section>
+);
+
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background text-foreground">
+      <CustomCursor />
+
+      {/* Nav */}
+      <nav className="sticky top-0 z-50 border-b border-border/40 bg-background/70 backdrop-blur-xl">
+        <div className="container mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+          <a href="#top" className="font-mono text-sm font-semibold">
+            <span className="text-gradient">parthasarathi</span>
+            <span className="text-muted-foreground">.dev</span>
+          </a>
+          <div className="hidden gap-8 text-sm text-muted-foreground md:flex">
+            <a href="#about" className="hover:text-foreground transition-colors">About</a>
+            <a href="#experience" className="hover:text-foreground transition-colors">Experience</a>
+            <a href="#projects" className="hover:text-foreground transition-colors">Projects</a>
+            <a href="#certifications" className="hover:text-foreground transition-colors">Certs</a>
+            <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
+          </div>
+          <Button asChild size="sm" variant="outline">
+            <a href="mailto:psmishra648@gmail.com"><Mail className="mr-2 h-4 w-4" />Hire me</a>
+          </Button>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <header id="top" className="relative overflow-hidden">
+        <div className="absolute inset-0 -z-10 opacity-30"
+             style={{ background: "radial-gradient(60% 60% at 30% 20%, hsl(var(--primary)/0.25), transparent), radial-gradient(50% 50% at 80% 60%, hsl(var(--accent)/0.2), transparent)" }} />
+        <div className="container mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 md:grid-cols-[1fr_auto] md:py-32">
+          <div className="space-y-6">
+            <Badge variant="outline" className="font-mono text-xs">
+              <span className="mr-2 h-2 w-2 rounded-full bg-primary animate-pulse" />
+              Open to SDE roles · 2026 Batch
+            </Badge>
+            <h1 className="text-4xl font-bold leading-[1.05] md:text-6xl">
+              Parthasarathi <span className="text-gradient">Mishra</span>
+            </h1>
+            <p className="text-xl font-medium text-muted-foreground md:text-2xl">
+              Software Engineer <span className="text-primary">|</span> Full-Stack Developer{" "}
+              <span className="text-primary">|</span> Applied AI/ML
+            </p>
+            <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+              B.Tech (IT) student at <span className="text-foreground">KIIT (2022–2026, CGPA 6.98/10)</span>{" "}
+              building scalable full-stack applications using <span className="text-foreground">FastAPI, React, Docker, and AWS</span>,
+              with applied machine learning experience in healthcare imaging and computer vision systems.
+            </p>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Button asChild size="lg" className="bg-gradient-primary text-primary-foreground shadow-glow hover:opacity-90">
+                <a href="#projects">View Projects <ArrowUpRight className="ml-1 h-4 w-4" /></a>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <a href="https://github.com/" target="_blank" rel="noreferrer"><Github className="mr-2 h-4 w-4" />GitHub</a>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <a href="https://linkedin.com/" target="_blank" rel="noreferrer"><Linkedin className="mr-2 h-4 w-4" />LinkedIn</a>
+              </Button>
+            </div>
+            <div className="flex flex-wrap gap-2 pt-4">
+              {strengths.map((s) => (
+                <Badge key={s} variant="secondary" className="rounded-full px-3 py-1 font-mono text-xs">
+                  {s}
+                </Badge>
+              ))}
+            </div>
+          </div>
+
+          {/* Animated profile photo placeholder */}
+          <div className="relative mx-auto h-64 w-64 md:h-80 md:w-80" data-cursor-hover>
+            <div className="absolute inset-0 rounded-full ring-gradient blur-md opacity-70" />
+            <div className="absolute inset-0 rounded-full ring-gradient" />
+            <div className="absolute inset-[6px] rounded-full bg-background" />
+            <div className="absolute inset-[10px] flex items-center justify-center rounded-full bg-secondary text-muted-foreground">
+              <div className="text-center">
+                <Sparkles className="mx-auto mb-2 h-8 w-8 text-primary" />
+                <p className="font-mono text-xs uppercase tracking-widest">Photo</p>
+                <p className="font-mono text-[10px] text-muted-foreground/60">add /public/profile.jpg</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* About / Stack */}
+      <Section id="about" icon={Code2} label="01 — About" title="Engineer-first mindset">
+        <div className="grid gap-6 md:grid-cols-3">
+          <Card className="md:col-span-2 border-border/60 bg-card/50 p-8 shadow-card">
+            <p className="text-base leading-relaxed text-muted-foreground">
+              I focus on shipping production-ready software — clean APIs, type-safe interfaces, and
+              measurable outcomes. My ML work sits on top of a solid SDE foundation: containerized
+              services, CI-friendly pipelines, and reproducible experiments.
+            </p>
+            <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+              <div><p className="text-3xl font-bold text-gradient">6.98</p><p className="text-xs text-muted-foreground">CGPA / 10</p></div>
+              <div><p className="text-3xl font-bold text-gradient">3+</p><p className="text-xs text-muted-foreground">Internships</p></div>
+              <div><p className="text-3xl font-bold text-gradient">11</p><p className="text-xs text-muted-foreground">Certifications</p></div>
+              <div><p className="text-3xl font-bold text-gradient">86%</p><p className="text-xs text-muted-foreground">EEG Model Acc.</p></div>
+            </div>
+          </Card>
+          <Card className="border-border/60 bg-card/50 p-8 shadow-card">
+            <div className="mb-3 flex items-center gap-2 text-sm text-muted-foreground">
+              <GraduationCap className="h-4 w-4" /> Education
+            </div>
+            <p className="font-semibold">B.Tech, Information Technology</p>
+            <p className="text-sm text-muted-foreground">KIIT University · 2022–2026</p>
+            <p className="mt-1 font-mono text-xs text-primary">CGPA 6.98 / 10</p>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {techStack.map((t) => (
+                <span key={t} className="rounded-md border border-border bg-secondary/40 px-2 py-1 font-mono text-[11px]">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </Card>
+        </div>
+      </Section>
+
+      {/* Experience */}
+      <Section id="experience" icon={Briefcase} label="02 — Experience" title="Internships">
+        <div className="space-y-4">
+          {experience.map((e) => (
+            <Card key={e.company} className="group border-border/60 bg-card/50 p-6 shadow-card transition-all hover:border-primary/40 hover:shadow-glow md:p-8">
+              <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+                <div>
+                  <h3 className="text-xl font-semibold">{e.role}</h3>
+                  <p className="text-primary">{e.company}</p>
+                </div>
+                <span className="font-mono text-xs text-muted-foreground">{e.period}</span>
+              </div>
+              <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+                {e.points.map((p) => (
+                  <li key={p} className="flex gap-3"><span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />{p}</li>
+                ))}
+              </ul>
+            </Card>
+          ))}
+        </div>
+      </Section>
+
+      {/* Projects */}
+      <Section id="projects" icon={Brain} label="03 — Projects" title="Selected work">
+        <div className="grid gap-6 md:grid-cols-3">
+          {projects.map((p) => (
+            <Card key={p.name} className="group flex flex-col border-border/60 bg-card/50 p-6 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow">
+              <div className="mb-3 flex items-start justify-between">
+                <h3 className="text-lg font-semibold">{p.name}</h3>
+                <ExternalLink className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
+              </div>
+              <p className="font-mono text-[11px] uppercase tracking-widest text-primary">{p.tag}</p>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
+              <div className="mt-4 flex flex-wrap gap-1.5">
+                {p.stack.map((s) => (
+                  <span key={s} className="rounded-md border border-border bg-secondary/40 px-2 py-0.5 font-mono text-[10px]">
+                    {s}
+                  </span>
+                ))}
+              </div>
+            </Card>
+          ))}
+        </div>
+      </Section>
+
+      {/* Certifications */}
+      <Section id="certifications" icon={Award} label="04 — Certifications" title="Continuous learning">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {certifications.map((c) => (
+            <div key={c.name} className="flex items-start gap-3 rounded-lg border border-border/60 bg-card/40 p-4 transition-colors hover:border-primary/40">
+              <Award className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+              <div>
+                <p className="text-sm font-medium leading-snug">{c.name}</p>
+                <p className="font-mono text-[11px] text-muted-foreground">{c.issuer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Extracurricular placeholder */}
+      <Section id="extracurricular" icon={Sparkles} label="05 — Extracurricular" title="Beyond the keyboard">
+        <Card className="border-dashed border-border/60 bg-card/30 p-10 text-center">
+          <p className="text-sm text-muted-foreground">
+            Activities, clubs, hackathons & leadership roles will be added here soon.
+          </p>
+          <p className="mt-2 font-mono text-[11px] uppercase tracking-widest text-muted-foreground/60">
+            editable section
+          </p>
+        </Card>
+      </Section>
+
+      {/* Contact */}
+      <section id="contact" className="container mx-auto max-w-6xl px-6 py-24">
+        <div className="rounded-2xl border border-border/60 bg-card/50 p-10 text-center shadow-card md:p-16">
+          <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">06 — Contact</p>
+          <h2 className="mt-3 text-3xl font-bold md:text-5xl">
+            Let's <span className="text-gradient">build</span> something.
+          </h2>
+          <p className="mx-auto mt-4 max-w-md text-sm text-muted-foreground">
+            Open to SDE, full-stack, and applied ML roles. Reach out anytime.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <Button asChild size="lg" className="bg-gradient-primary text-primary-foreground shadow-glow hover:opacity-90">
+              <a href="mailto:psmishra648@gmail.com"><Mail className="mr-2 h-4 w-4" />psmishra648@gmail.com</a>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <a href="https://linkedin.com/" target="_blank" rel="noreferrer"><Linkedin className="mr-2 h-4 w-4" />LinkedIn</a>
+            </Button>
+            <Button asChild size="lg" variant="outline">
+              <a href="https://github.com/" target="_blank" rel="noreferrer"><Github className="mr-2 h-4 w-4" />GitHub</a>
+            </Button>
+          </div>
+        </div>
+        <p className="mt-10 text-center font-mono text-xs text-muted-foreground">
+          © 2026 Parthasarathi Mishra · Built with React + Tailwind
+        </p>
+      </section>
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
