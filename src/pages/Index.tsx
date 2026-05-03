@@ -257,15 +257,20 @@ const Index = () => {
                 <p className="mt-1 font-mono text-xs text-primary">89.6%</p>
               </div>
             </div>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {techStack.map((t) => (
-                <span key={t} className="rounded-md border border-border bg-secondary/40 px-2 py-1 font-mono text-[11px]">
-                  {t}
-                </span>
-              ))}
-            </div>
           </Card>
         </div>
+        <Card className="mt-6 border-border/60 bg-card/50 p-8 shadow-card">
+          <div className="mb-4 flex items-center gap-2 text-sm text-muted-foreground">
+            <Code2 className="h-4 w-4" /> Tech Stack
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {techStack.map((t) => (
+              <span key={t} className="rounded-md border border-border bg-secondary/40 px-3 py-1.5 font-mono text-xs">
+                {t}
+              </span>
+            ))}
+          </div>
+        </Card>
       </Section>
 
       {/* Experience */}
