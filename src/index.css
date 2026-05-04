@@ -142,3 +142,52 @@ All colors MUST be HSL.
 @keyframes spin-slow {
   to { transform: rotate(360deg); }
 }
+
+/* ========== Project animations ========== */
+@layer utilities {
+  .anim-pose-dot {
+    animation: pose-pulse 2.4s ease-in-out infinite;
+  }
+  .anim-pose-line {
+    stroke-dasharray: 80;
+    stroke-dashoffset: 80;
+    animation: pose-draw 2.4s ease-in-out infinite;
+  }
+  .anim-eeg-wave path {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: eeg-draw 3s linear infinite;
+  }
+  .anim-eye-iris {
+    transform-origin: center;
+    animation: eye-scan 3s ease-in-out infinite;
+  }
+  .anim-eye-scan {
+    animation: eye-scanline 2.4s linear infinite;
+  }
+}
+
+@keyframes pose-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+@keyframes pose-draw {
+  0% { stroke-dashoffset: 80; }
+  50% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: -80; }
+}
+@keyframes eeg-draw {
+  0% { stroke-dashoffset: 600; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes eye-scan {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-6px, -2px); }
+  50% { transform: translate(0, 0); }
+  75% { transform: translate(6px, 2px); }
+}
+@keyframes eye-scanline {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10%, 90% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
