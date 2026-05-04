@@ -1,4 +1,5 @@
 import { CustomCursor } from "@/components/CustomCursor";
+import { ProjectAnimation } from "@/components/ProjectAnimation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -290,12 +291,27 @@ const Index = () => {
           <div className="mb-4 flex items-center gap-2 text-sm text-muted-foreground">
             <Code2 className="h-4 w-4" /> Tech Stack
           </div>
-          <div className="flex flex-wrap gap-2">
-            {techStack.map((t) => (
-              <span key={t} className="rounded-md border border-border bg-secondary/40 px-3 py-1.5 font-mono text-xs">
-                {t}
-              </span>
-            ))}
+          <div className="flex flex-wrap gap-3">
+            {techStack.map((t) => {
+              const slug = techIcon[t];
+              return (
+                <div
+                  key={t}
+                  className="group flex items-center gap-2 rounded-lg border border-border bg-secondary/40 px-3 py-2 transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-glow"
+                  data-cursor-hover
+                >
+                  {slug && (
+                    <img
+                      src={`https://cdn.simpleicons.org/${slug}`}
+                      alt={`${t} logo`}
+                      className="h-5 w-5"
+                      loading="lazy"
+                    />
+                  )}
+                  <span className="font-mono text-xs">{t}</span>
+                </div>
+              );
+            })}
           </div>
         </Card>
       </Section>
@@ -327,6 +343,9 @@ const Index = () => {
         <div className="grid gap-6 md:grid-cols-3">
           {projects.map((p) => (
             <Card key={p.name} className="group flex flex-col border-border/60 bg-card/50 p-6 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow">
+              <div className="mb-4 h-32 w-full overflow-hidden rounded-lg border border-border/60 bg-gradient-to-br from-secondary/60 to-secondary/20">
+                <ProjectAnimation kind={p.anim} />
+              </div>
               <div className="mb-3 flex items-start justify-between">
                 <h3 className="text-lg font-semibold">{p.name}</h3>
                 <ExternalLink className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
@@ -334,11 +353,25 @@ const Index = () => {
               <p className="font-mono text-[11px] uppercase tracking-widest text-primary">{p.tag}</p>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
               <div className="mt-4 flex flex-wrap gap-1.5">
-                {p.stack.map((s) => (
-                  <span key={s} className="rounded-md border border-border bg-secondary/40 px-2 py-0.5 font-mono text-[10px]">
-                    {s}
-                  </span>
-                ))}
+                {p.stack.map((s) => {
+                  const slug = techIcon[s];
+                  return (
+                    <span
+                      key={s}
+                      className="inline-flex items-center gap-1 rounded-md border border-border bg-secondary/40 px-2 py-0.5 font-mono text-[10px]"
+                    >
+                      {slug && (
+                        <img
+                          src={`https://cdn.simpleicons.org/${slug}`}
+                          alt=""
+                          className="h-3 w-3"
+                          loading="lazy"
+                        />
+                      )}
+                      {s}
+                    </span>
+                  );
+                })}
               </div>
             </Card>
           ))}
