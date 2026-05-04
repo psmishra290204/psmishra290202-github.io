@@ -29,6 +29,30 @@ const techStack = [
   "PostgreSQL", "MongoDB", "TensorFlow", "PyTorch", "Git", "Linux",
 ];
 
+// Map a tech name -> simpleicons.org slug
+const techIcon: Record<string, string> = {
+  FastAPI: "fastapi",
+  React: "react",
+  TypeScript: "typescript",
+  Docker: "docker",
+  AWS: "amazonwebservices",
+  "Node.js": "nodedotjs",
+  PostgreSQL: "postgresql",
+  MongoDB: "mongodb",
+  TensorFlow: "tensorflow",
+  PyTorch: "pytorch",
+  Git: "git",
+  Linux: "linux",
+  Python: "python",
+  "React.js": "react",
+  "TensorFlow.js": "tensorflow",
+  MediaPipe: "google",
+  Keras: "keras",
+  OpenCV: "opencv",
+  CSS: "css3",
+  "Webcam API": "webrtc",
+};
+
 const experience = [
   {
     role: "Penetration Tester Intern",
@@ -68,18 +92,21 @@ const projects = [
     tag: "Real-time Pose Estimation",
     desc: "Browser-based pose estimator running fully client-side with live webcam input and skeletal overlay rendering.",
     stack: ["React.js", "TensorFlow.js", "MediaPipe", "Webcam API", "CSS"],
+    anim: "pose" as const,
   },
   {
     name: "EEG Emotion Recognition",
     tag: "Signal Processing + Deep Learning",
     desc: "End-to-end pipeline using PLV & Coherence connectivity features with a hybrid CNN + SVM classifier.",
     stack: ["Python", "CNN", "SVM", "PLV", "Coherence", "86% accuracy"],
+    anim: "eeg" as const,
   },
   {
     name: "Eye Disease Detection",
     tag: "Medical Imaging",
     desc: "CNN-based classifier for retinal images detecting common eye diseases from fundus photography.",
     stack: ["Python", "CNN", "Keras", "OpenCV"],
+    anim: "eye" as const,
   },
 ];
 
