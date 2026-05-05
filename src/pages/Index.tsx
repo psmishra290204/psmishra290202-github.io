@@ -294,19 +294,21 @@ const Index = () => {
           <div className="space-y-6">
             <Badge variant="outline" className="font-mono text-xs">
               <span className="mr-2 h-2 w-2 rounded-full bg-primary animate-pulse" />
-              Open to SDE roles · 2026 Batch
+              Open to SDE roles · 2026
             </Badge>
             <h1 className="text-4xl font-bold leading-[1.05] md:text-6xl">
-              Parthasarathi <span className="text-gradient">Mishra</span>
+              PARTHASARATHI <span className="text-gradient">MISHRA</span>
             </h1>
             <p className="text-xl font-medium text-muted-foreground md:text-2xl">
               Software Engineer <span className="text-primary">|</span> Full-Stack Developer{" "}
-              <span className="text-primary">|</span> Applied AI/ML
+              <span className="text-primary">|</span> AI/ML
             </p>
             <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
               B.Tech (IT) student at <span className="text-foreground">KIIT (2022–2026)</span> building scalable
               full-stack applications using <span className="text-foreground">FastAPI, React, Docker, and AWS</span>,
-              with applied machine learning experience in healthcare imaging and computer vision systems.
+              with hands-on experience in{" "}
+              <span className="text-foreground">backend systems, REST APIs, and applied machine learning</span>
+              across computer vision and healthcare-based projects.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
               <Button
@@ -319,13 +321,13 @@ const Index = () => {
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <a href="https://github.com/" target="_blank" rel="noreferrer">
+                <a href="https://github.com/psmishra290204" target="_blank" rel="noreferrer">
                   <Github className="mr-2 h-4 w-4" />
                   GitHub
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
+                <a href="www.linkedin.com/in/parthasarathi-mishra-969b5126a" target="_blank" rel="noreferrer">
                   <Linkedin className="mr-2 h-4 w-4" />
                   LinkedIn
                 </a>
@@ -361,9 +363,12 @@ const Index = () => {
         <div className="grid gap-6 md:grid-cols-3">
           <Card className="md:col-span-2 border-border/60 bg-card/50 p-8 shadow-card">
             <p className="text-base leading-relaxed text-muted-foreground">
-              I focus on shipping production-ready software — clean APIs, type-safe interfaces, and measurable outcomes.
-              My ML work sits on top of a solid SDE foundation: containerized services, CI-friendly pipelines, and
-              reproducible experiments.
+              B.Tech (IT) student at KIIT’26 with skills in Full-Stack Development (FastAPI, React, Docker, AWS), UI/UX
+              design, and AI/ML projects in healthcare & computer vision. Experienced in market research, client
+              engagement, and data-driven strategy, with a strong interest in consulting and business innovation. An
+              aspiring entrepreneur, I strive to combine technology, design, and strategic problem-solving to create
+              impactful solutions. Also a National Badminton Athlete, bringing discipline, resilience, and teamwork into
+              every pursuit.
             </p>
             <div className="mt-6 grid grid-cols-3 gap-4">
               <div>
