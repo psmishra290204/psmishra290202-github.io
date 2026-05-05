@@ -584,7 +584,7 @@ const Index = () => {
                 key={s.name}
                 href={s.url}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label={s.name}
                 data-cursor-hover
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-glow"
