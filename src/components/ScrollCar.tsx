@@ -216,7 +216,7 @@ const CarSvg = ({ spinning }: { spinning: boolean }) => (
       <line x1="46" y1="22" x2="46" y2="30" stroke="hsl(var(--background))" strokeWidth="0.6" />
       <line x1="42" y1="26" x2="50" y2="26" stroke="hsl(var(--background))" strokeWidth="0.6" />
     </g>
-  </svg>
+  </g>
 );
 
 export default ScrollCar;
