@@ -307,9 +307,14 @@ const Index = () => {
               <span className="mr-2 h-2 w-2 rounded-full bg-primary animate-pulse" />
               Open to SDE roles · 2026
             </Badge>
-            <h1 className="text-4xl font-bold leading-[1.05] md:text-6xl">
-              PARTHASARATHI <span className="text-gradient">MISHRA</span>
-            </h1>
+            <div className="relative inline-block">
+              <div className="absolute -top-20 left-2 z-10 md:-top-28 md:left-6">
+                <SectionMascot action="sit-laptop" />
+              </div>
+              <h1 className="text-4xl font-bold leading-[1.05] md:text-6xl">
+                PARTHASARATHI <span className="text-gradient">MISHRA</span>
+              </h1>
+            </div>
             <p className="text-xl font-medium text-muted-foreground md:text-2xl">
               Software Engineer <span className="text-primary">|</span> Full-Stack Developer{" "}
               <span className="text-primary">|</span> AI/ML
