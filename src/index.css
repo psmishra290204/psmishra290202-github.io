@@ -259,6 +259,17 @@ All colors MUST be HSL.
   .anim-mascot-wave-img { animation: mascot-wave-img 2s ease-in-out infinite; transform-origin: 50% 95%; }
   .anim-mascot-cheer-img { animation: mascot-cheer-img 1s ease-in-out infinite; transform-origin: center bottom; }
   .anim-mascot-focus { animation: mascot-focus 2.8s ease-in-out infinite; transform-origin: 50% 80%; }
+  .anim-sit-wave { animation: sit-wave 0.9s ease-in-out infinite; transform-origin: 50% 85%; }
+  .anim-sit-type { animation: sit-type 1.6s ease-in-out infinite; transform-origin: 50% 85%; }
+}
+
+@keyframes sit-wave {
+  0%, 100% { transform: rotate(-3deg) translateY(0); }
+  50%      { transform: rotate(3deg)  translateY(-2px); }
+}
+@keyframes sit-type {
+  0%, 100% { transform: translateY(0) rotate(-0.5deg); }
+  50%      { transform: translateY(-3px) rotate(0.5deg); }
 }
 @keyframes mascot-wave-img {
   0%, 100% { transform: translateY(0) rotate(-3deg); }
