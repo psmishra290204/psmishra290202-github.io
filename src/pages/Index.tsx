@@ -173,6 +173,73 @@ const Section = ({
   </section>
 );
 
+type Project = (typeof projects)[number];
+
+const ProjectCard = ({ p }: { p: Project }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <Card className="group flex flex-col border-border/60 bg-card/50 p-5 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow sm:p-6">
+      <div className="mb-4 aspect-[5/3] w-full overflow-hidden rounded-lg border border-border/60 bg-gradient-to-br from-secondary/60 to-secondary/20">
+        <ProjectAnimation kind={p.anim} />
+      </div>
+      <div className="mb-2 flex items-start justify-between gap-2">
+        <h3 className="text-lg font-semibold">{p.name}</h3>
+        <ExternalLink className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
+      </div>
+      <p className="font-mono text-[11px] uppercase tracking-widest text-primary">{p.tag}</p>
+      <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
+
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className="mt-4 inline-flex items-center justify-between gap-2 rounded-md border border-border/60 bg-secondary/40 px-3 py-2 text-xs font-medium text-foreground transition-colors hover:border-primary/50 hover:text-primary"
+        data-cursor-hover
+      >
+        <span>{open ? "Hide details" : "View details"}</span>
+        <ChevronDown
+          className={`h-3.5 w-3.5 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+
+      <div
+        className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+          open ? "mt-3 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <p className="mb-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Stack</p>
+          <div className="flex flex-wrap gap-1.5">
+            {p.stack.map((s) => {
+              const slug = techIcon[s];
+              return (
+                <span
+                  key={s}
+                  className="inline-flex items-center gap-1 rounded-md border border-border bg-secondary/40 px-2 py-0.5 font-mono text-[10px]"
+                >
+                  {slug && (
+                    <img src={`https://cdn.simpleicons.org/${slug}`} alt="" className="h-3 w-3" loading="lazy" />
+                  )}
+                  {s}
+                </span>
+              );
+            })}
+          </div>
+          <p className="mb-2 mt-4 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Key results</p>
+          <ul className="space-y-1.5 text-xs text-muted-foreground">
+            {p.results?.map((r) => (
+              <li key={r} className="flex gap-2">
+                <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                <span>{r}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Card>
+  );
+};
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
