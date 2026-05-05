@@ -396,19 +396,19 @@ const Index = () => {
                   sub: "KIIT University · 2022–2026",
                   score: "CGPA 6.98 / 10",
                   // Replace # with the link to your certificate / marksheet
-                  link: "#",
+                  link: "https://drive.google.com/file/d/1fU59t0nluMLuflOTE5DJ-tsfcMyixnuA/view?usp=drive_link",
                 },
                 {
                   title: "HSC (Class XII, CBSE)",
                   sub: "Oneness International School · 2022",
                   score: "82%",
-                  link: "#",
+                  link: "https://drive.google.com/file/d/1-XqD_gHcjOzsODRmiUYFP_ISLCR1hixq/view?usp=drive_link",
                 },
                 {
                   title: "SSC (Class X, CBSE)",
                   sub: "Oneness International School · 2020",
                   score: "89.6%",
-                  link: "#",
+                  link: "https://drive.google.com/file/d/1-yEfXWxTYV7hlJ7SJ3oxax5cuk0tay9a/view?usp=drive_link",
                 },
               ].map((e) => (
                 <div key={e.title}>
@@ -535,7 +535,7 @@ const Index = () => {
             Let's <span className="text-gradient">build</span> something.
           </h2>
           <p className="mx-auto mt-4 max-w-md text-sm text-muted-foreground">
-            Open to SDE, full-stack, and applied ML roles. Reach out anytime.
+            Open to SDE, Analyst roles. Reach out anytime.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Button
@@ -549,13 +549,13 @@ const Index = () => {
               </a>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
+              <a href="www.linkedin.com/in/parthasarathi-mishra-969b5126a" target="_blank" rel="noreferrer">
                 <Linkedin className="mr-2 h-4 w-4" />
                 LinkedIn
               </a>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <a href="https://github.com/" target="_blank" rel="noreferrer">
+              <a href="https://github.com/psmishra290204" target="_blank" rel="noreferrer">
                 <Github className="mr-2 h-4 w-4" />
                 GitHub
               </a>
@@ -563,10 +563,22 @@ const Index = () => {
           </div>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             {[
-              { name: "Facebook", slug: "facebook", url: "https://facebook.com/" },
-              { name: "Instagram", slug: "instagram", url: "https://instagram.com/" },
-              { name: "Quora", slug: "quora", url: "https://quora.com/" },
-              { name: "Reddit", slug: "reddit", url: "https://reddit.com/" },
+              { name: "Facebook", slug: "facebook", url: "https://www.facebook.com/profile.php?id=61551571820413" },
+              {
+                name: "Instagram",
+                slug: "instagram",
+                url: "https://www.instagram.com/deja_vu_2902?igsh=NzJ0Ympwc3UzYTVn",
+              },
+              {
+                name: "Quora",
+                slug: "quora",
+                url: "https://www.quora.com/profile/Parthasarathi-Mishra-23?ch=10&oid=1889804417&share=bbf0103f&srid=hMMY5c&target_type=user",
+              },
+              {
+                name: "Reddit",
+                slug: "reddit",
+                url: "https://www.reddit.com/user/Upbeat_Ad_1082/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button",
+              },
             ].map((s) => (
               <a
                 key={s.name}
@@ -583,7 +595,7 @@ const Index = () => {
           </div>
         </div>
         <p className="mt-10 text-center font-mono text-xs text-muted-foreground">
-          © 2026 Parthasarathi Mishra · Built with React + Tailwind
+          © 2026 Parthasarathi Mishra · Built with React + Tailwind and Love💖
         </p>
       </section>
     </div>
