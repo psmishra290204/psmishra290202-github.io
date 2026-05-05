@@ -106,9 +106,12 @@ All colors MUST be HSL.
 
   body {
     @apply text-foreground antialiased;
-    background-color: hsl(var(--background));
+    background-color: transparent;
     font-family: 'Inter', system-ui, sans-serif;
     cursor: none;
+  }
+  html {
+    background-color: hsl(var(--background));
   }
 
   html {
