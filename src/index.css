@@ -261,6 +261,33 @@ All colors MUST be HSL.
   .anim-mascot-focus { animation: mascot-focus 2.8s ease-in-out infinite; transform-origin: 50% 80%; }
   .anim-sit-wave { animation: sit-wave 0.9s ease-in-out infinite; transform-origin: 50% 85%; }
   .anim-sit-type { animation: sit-type 1.6s ease-in-out infinite; transform-origin: 50% 85%; }
+  /* Once-per-view scroll-triggered section animations */
+  .anim-mascot-present-once { animation: mascot-present-once 1.6s ease-in-out 1; transform-origin: 50% 90%; }
+  .anim-mascot-type-once    { animation: mascot-type-once    1.4s ease-in-out 2; transform-origin: 50% 90%; }
+  .anim-mascot-think-once   { animation: mascot-think-once   1.8s ease-in-out 1; transform-origin: 50% 90%; }
+  .anim-mascot-cheer-once   { animation: mascot-cheer-once   1.2s ease-in-out 2; transform-origin: 50% 90%; }
+  .anim-mascot-stretch-once { animation: mascot-stretch-once 1.6s ease-in-out 1; transform-origin: 50% 90%; }
+}
+
+@keyframes mascot-present-once {
+  0%, 100% { transform: rotate(0) translateY(0); }
+  50%      { transform: rotate(-3deg) translateY(-4px); }
+}
+@keyframes mascot-type-once {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50%      { transform: translateY(-3px) rotate(1deg); }
+}
+@keyframes mascot-think-once {
+  0%, 100% { transform: rotate(-2deg); }
+  50%      { transform: rotate(2deg); }
+}
+@keyframes mascot-cheer-once {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%      { transform: translateY(-6px) scale(1.04); }
+}
+@keyframes mascot-stretch-once {
+  0%, 100% { transform: scaleY(1); }
+  50%      { transform: scaleY(1.05) translateY(-3px); }
 }
 
 @keyframes sit-wave {
