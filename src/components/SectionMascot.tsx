@@ -6,6 +6,8 @@ import mascotThink from "@/assets/mascot-think.png";
 import mascotCelebrate from "@/assets/mascot-celebrate.png";
 import mascotStretch from "@/assets/mascot-stretch.png";
 import mascotSitting from "@/assets/mascot-sitting.png";
+import mascotSitWave from "@/assets/mascot-sit-wave.png";
+import mascotSitTyping from "@/assets/mascot-sit-typing.png";
 
 export type MascotAction =
   | "wave"
@@ -46,11 +48,30 @@ export const SectionMascot = ({
   className?: string;
 }) => {
   const isSitting = action === "sit-laptop";
+  // For the sitting mascot: wave for 5s, then type forever.
+  const [sitPhase, setSitPhase] = React.useState<"wave" | "type">("wave");
+  React.useEffect(() => {
+    if (!isSitting) return;
+    const t = setTimeout(() => setSitPhase("type"), 5000);
+    return () => clearTimeout(t);
+  }, [isSitting]);
+
+  const src = isSitting
+    ? sitPhase === "wave"
+      ? mascotSitWave
+      : mascotSitTyping
+    : sources[action];
+  const anim = isSitting
+    ? sitPhase === "wave"
+      ? "anim-mascot-wave-img"
+      : "anim-mascot-focus"
+    : animClass[action];
+
   return (
     <div
       aria-hidden
       className={`relative shrink-0 ${
-        isSitting ? "h-28 w-28 md:h-40 md:w-40" : "h-36 w-28 md:h-48 md:w-36"
+        isSitting ? "h-40 w-40 md:h-56 md:w-56" : "h-36 w-28 md:h-48 md:w-36"
       } ${className}`}
     >
       {message && (
@@ -60,9 +81,9 @@ export const SectionMascot = ({
         </div>
       )}
       <img
-        src={sources[action]}
+        src={src}
         alt=""
-        className={`h-full w-full object-contain opacity-90 drop-shadow-[0_10px_28px_hsl(var(--foreground)/0.14)] ${animClass[action]}`}
+        className={`h-full w-full object-contain drop-shadow-[0_10px_28px_hsl(var(--foreground)/0.18)] ${anim}`}
         draggable={false}
       />
     </div>
