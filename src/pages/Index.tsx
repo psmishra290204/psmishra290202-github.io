@@ -3,6 +3,8 @@ import { ProjectAnimation } from "@/components/ProjectAnimation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import {
   Github,
   Linkedin,
@@ -98,6 +100,11 @@ const projects = [
     desc: "Browser-based pose estimator running fully client-side with live webcam input and skeletal overlay rendering.",
     stack: ["React.js", "TensorFlow.js", "MediaPipe", "Webcam API", "CSS"],
     anim: "pose" as const,
+    results: [
+      "Runs 100% in-browser, zero backend cost",
+      "Real-time 30+ FPS skeletal overlay",
+      "Responsive UI with webcam permissions handled gracefully",
+    ],
   },
   {
     name: "EEG Emotion Recognition",
@@ -105,6 +112,11 @@ const projects = [
     desc: "End-to-end pipeline using PLV & Coherence connectivity features with a hybrid CNN + SVM classifier.",
     stack: ["Python", "CNN", "SVM", "PLV", "Coherence", "86% accuracy"],
     anim: "eeg" as const,
+    results: [
+      "86% classification accuracy on benchmark dataset",
+      "Hybrid CNN + SVM outperformed baselines",
+      "Reproducible preprocessing pipeline (PLV + Coherence)",
+    ],
   },
   {
     name: "Eye Disease Detection",
@@ -112,6 +124,11 @@ const projects = [
     desc: "CNN-based classifier for retinal images detecting common eye diseases from fundus photography.",
     stack: ["Python", "CNN", "Keras", "OpenCV"],
     anim: "eye" as const,
+    results: [
+      "Multi-class CNN over fundus image dataset",
+      "Image augmentation + transfer learning",
+      "Modular Keras pipeline for retraining",
+    ],
   },
 ];
 
@@ -155,6 +172,73 @@ const Section = ({
     {children}
   </section>
 );
+
+type Project = (typeof projects)[number];
+
+const ProjectCard = ({ p }: { p: Project }) => {
+  const [open, setOpen] = useState(false);
+  return (
+    <Card className="group flex flex-col border-border/60 bg-card/50 p-5 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow sm:p-6">
+      <div className="mb-4 aspect-[5/3] w-full overflow-hidden rounded-lg border border-border/60 bg-gradient-to-br from-secondary/60 to-secondary/20">
+        <ProjectAnimation kind={p.anim} />
+      </div>
+      <div className="mb-2 flex items-start justify-between gap-2">
+        <h3 className="text-lg font-semibold">{p.name}</h3>
+        <ExternalLink className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
+      </div>
+      <p className="font-mono text-[11px] uppercase tracking-widest text-primary">{p.tag}</p>
+      <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
+
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className="mt-4 inline-flex items-center justify-between gap-2 rounded-md border border-border/60 bg-secondary/40 px-3 py-2 text-xs font-medium text-foreground transition-colors hover:border-primary/50 hover:text-primary"
+        data-cursor-hover
+      >
+        <span>{open ? "Hide details" : "View details"}</span>
+        <ChevronDown
+          className={`h-3.5 w-3.5 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+
+      <div
+        className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+          open ? "mt-3 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <p className="mb-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Stack</p>
+          <div className="flex flex-wrap gap-1.5">
+            {p.stack.map((s) => {
+              const slug = techIcon[s];
+              return (
+                <span
+                  key={s}
+                  className="inline-flex items-center gap-1 rounded-md border border-border bg-secondary/40 px-2 py-0.5 font-mono text-[10px]"
+                >
+                  {slug && (
+                    <img src={`https://cdn.simpleicons.org/${slug}`} alt="" className="h-3 w-3" loading="lazy" />
+                  )}
+                  {s}
+                </span>
+              );
+            })}
+          </div>
+          <p className="mb-2 mt-4 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">Key results</p>
+          <ul className="space-y-1.5 text-xs text-muted-foreground">
+            {p.results?.map((r) => (
+              <li key={r} className="flex gap-2">
+                <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                <span>{r}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </Card>
+  );
+};
 
 const Index = () => {
   return (
@@ -393,38 +477,9 @@ const Index = () => {
 
       {/* Projects */}
       <Section id="projects" icon={Brain} label="03 — Projects" title="Selected work">
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => (
-            <Card
-              key={p.name}
-              className="group flex flex-col border-border/60 bg-card/50 p-6 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow"
-            >
-              <div className="mb-4 h-32 w-full overflow-hidden rounded-lg border border-border/60 bg-gradient-to-br from-secondary/60 to-secondary/20">
-                <ProjectAnimation kind={p.anim} />
-              </div>
-              <div className="mb-3 flex items-start justify-between">
-                <h3 className="text-lg font-semibold">{p.name}</h3>
-                <ExternalLink className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
-              </div>
-              <p className="font-mono text-[11px] uppercase tracking-widest text-primary">{p.tag}</p>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
-              <div className="mt-4 flex flex-wrap gap-1.5">
-                {p.stack.map((s) => {
-                  const slug = techIcon[s];
-                  return (
-                    <span
-                      key={s}
-                      className="inline-flex items-center gap-1 rounded-md border border-border bg-secondary/40 px-2 py-0.5 font-mono text-[10px]"
-                    >
-                      {slug && (
-                        <img src={`https://cdn.simpleicons.org/${slug}`} alt="" className="h-3 w-3" loading="lazy" />
-                      )}
-                      {s}
-                    </span>
-                  );
-                })}
-              </div>
-            </Card>
+            <ProjectCard key={p.name} p={p} />
           ))}
         </div>
       </Section>

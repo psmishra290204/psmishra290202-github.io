@@ -7,7 +7,7 @@ export const ProjectAnimation = ({ kind }: { kind: "pose" | "eeg" | "eye" }) => 
 };
 
 const PoseAnim = () => (
-  <svg viewBox="0 0 200 120" className="h-full w-full">
+  <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet" className="block h-full w-full">
     <defs>
       <linearGradient id="poseG" x1="0" x2="1">
         <stop offset="0%" stopColor="hsl(var(--primary))" />
@@ -38,7 +38,7 @@ const PoseAnim = () => (
 );
 
 const EEGAnim = () => (
-  <svg viewBox="0 0 200 120" className="h-full w-full anim-eeg-wave">
+  <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet" className="block h-full w-full anim-eeg-wave">
     <defs>
       <linearGradient id="eegG" x1="0" x2="1">
         <stop offset="0%" stopColor="hsl(var(--primary))" />
@@ -65,7 +65,7 @@ const EEGAnim = () => (
 );
 
 const EyeAnim = () => (
-  <svg viewBox="0 0 200 120" className="h-full w-full overflow-hidden">
+  <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet" className="block h-full w-full overflow-hidden">
     <defs>
       <linearGradient id="eyeG" x1="0" x2="1">
         <stop offset="0%" stopColor="hsl(var(--primary))" />
