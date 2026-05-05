@@ -19,12 +19,11 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 
-const strengths = ["Python", "Full-Stack Development", "Data Structures", "React.js", "MongoDB"];
+const strengths = ["Python", "Java", "Full-Stack Development", "DSA", "React.js", "MongoDB"];
 
 const techStack = [
-  "FastAPI",
+  "VS Code",
   "React",
-  "TypeScript",
   "Docker",
   "AWS",
   "Node.js",
@@ -38,7 +37,6 @@ const techStack = [
 
 // Map a tech name -> simpleicons.org slug
 const techIcon: Record<string, string> = {
-  FastAPI: "fastapi",
   React: "react",
   TypeScript: "typescript",
   Docker: "docker",
