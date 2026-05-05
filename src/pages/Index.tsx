@@ -1,5 +1,6 @@
 import { CustomCursor } from "@/components/CustomCursor";
 import { ProjectAnimation } from "@/components/ProjectAnimation";
+import { CodeRainBg } from "@/components/CodeRainBg";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -125,17 +126,18 @@ const projects = [
 ];
 
 const certifications = [
-  { name: "Financial Accounting – Advanced Topics", issuer: "UIUC" },
-  { name: "Data Science with Python", issuer: "Coincent.ai" },
-  { name: "Introduction in Applied Business Analytics", issuer: "UIUC" },
-  { name: "Intro to Business Analytics: Communicating with Data", issuer: "UIUC" },
-  { name: "Generative AI: Introduction and Applications", issuer: "IBM" },
-  { name: "Generative AI: Prompt Engineering Basics", issuer: "IBM" },
-  { name: "Prompt Engineering for ChatGPT", issuer: "Vanderbilt" },
-  { name: "Cybersecurity Intern Certificate", issuer: "Ceeras" },
-  { name: "Android Developer Virtual Internship", issuer: "Google for Developers" },
-  { name: "Python Full Stack Developer Virtual Internship", issuer: "EduSkills Foundation" },
-  { name: "Fundamentals of Cybersecurity (EDU-102)", issuer: "Zscaler" },
+  // Replace href "#" with the actual certificate / PDF URL for each item.
+  { name: "Financial Accounting – Advanced Topics", issuer: "UIUC", href: "#" },
+  { name: "Data Science with Python", issuer: "Coincent.ai", href: "#" },
+  { name: "Introduction in Applied Business Analytics", issuer: "UIUC", href: "#" },
+  { name: "Intro to Business Analytics: Communicating with Data", issuer: "UIUC", href: "#" },
+  { name: "Generative AI: Introduction and Applications", issuer: "IBM", href: "#" },
+  { name: "Generative AI: Prompt Engineering Basics", issuer: "IBM", href: "#" },
+  { name: "Prompt Engineering for ChatGPT", issuer: "Vanderbilt", href: "#" },
+  { name: "Cybersecurity Intern Certificate", issuer: "Ceeras", href: "#" },
+  { name: "Android Developer Virtual Internship", issuer: "Google for Developers", href: "#" },
+  { name: "Python Full Stack Developer Virtual Internship", issuer: "EduSkills Foundation", href: "#" },
+  { name: "Fundamentals of Cybersecurity (EDU-102)", issuer: "Zscaler", href: "#" },
 ];
 
 const Section = ({
@@ -498,22 +500,31 @@ const Index = () => {
       </Section>
 
       {/* Certifications */}
-      <Section id="certifications" icon={Award} label="04 — Certifications" title="Continuous learning">
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {certifications.map((c) => (
-            <div
-              key={c.name}
-              className="flex items-start gap-3 rounded-lg border border-border/60 bg-card/40 p-4 transition-colors hover:border-primary/40"
-            >
-              <Award className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-              <div>
-                <p className="text-sm font-medium leading-snug">{c.name}</p>
-                <p className="font-mono text-[11px] text-muted-foreground">{c.issuer}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </Section>
+      <div className="relative">
+        <CodeRainBg />
+        <Section id="certifications" icon={Award} label="04 — Certifications" title="Continuous learning">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {certifications.map((c) => (
+              <a
+                key={c.name}
+                href={c.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor-hover
+                className="group relative flex items-start gap-3 overflow-hidden rounded-lg border border-border/60 bg-card/60 p-4 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-primary/60 hover:shadow-glow"
+              >
+                <Award className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                <div className="min-w-0">
+                  <p className="text-sm font-medium leading-snug">{c.name}</p>
+                  <p className="font-mono text-[11px] text-muted-foreground">{c.issuer}</p>
+                </div>
+                <ExternalLink className="ml-auto h-3.5 w-3.5 shrink-0 opacity-0 transition-opacity group-hover:opacity-70" />
+                <span className="pointer-events-none absolute inset-0 rounded-lg ring-0 ring-primary/0 transition-all group-hover:ring-2 group-hover:ring-primary/30" />
+              </a>
+            ))}
+          </div>
+        </Section>
+      </div>
 
       {/* Extracurricular placeholder */}
       <Section id="extracurricular" icon={Sparkles} label="05 — Extracurricular" title="Beyond the keyboard">
