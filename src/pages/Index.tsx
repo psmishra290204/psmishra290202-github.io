@@ -68,6 +68,7 @@ const experience = [
     points: [
       "Performed VAPT on web applications and internal network assets.",
       "Tools: Nmap, Burp Suite, Metasploit, Wireshark, OWASP ZAP.",
+      "Built and secured dynamic web apps using MERN stack",
     ],
   },
   {
@@ -84,8 +85,8 @@ const experience = [
     company: "Coreline Solutions Pvt Ltd",
     period: "Jun 2025 – Aug 2025",
     points: [
-      "Translated business requirements into technical specs for engineering teams.",
-      "Built dashboards and analyzed product KPIs to drive data-informed decisions.",
+      "Coordinated with teams to track requirements and project progress.",
+      "Analyzed data to support business decisions and process improvements.",
     ],
   },
 ];
@@ -197,9 +198,7 @@ const ProjectCard = ({ p }: { p: Project }) => {
         data-cursor-hover
       >
         <span>{open ? "Hide details" : "View details"}</span>
-        <ChevronDown
-          className={`h-3.5 w-3.5 transition-transform duration-300 ${open ? "rotate-180" : ""}`}
-        />
+        <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
       </button>
 
       <div
@@ -314,10 +313,9 @@ const Index = () => {
               <span className="text-primary">|</span> Applied AI/ML
             </p>
             <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              B.Tech (IT) student at <span className="text-foreground">KIIT (2022–2026)</span> building
-              scalable full-stack applications using{" "}
-              <span className="text-foreground">FastAPI, React, Docker, and AWS</span>, with applied machine learning
-              experience in healthcare imaging and computer vision systems.
+              B.Tech (IT) student at <span className="text-foreground">KIIT (2022–2026)</span> building scalable
+              full-stack applications using <span className="text-foreground">FastAPI, React, Docker, and AWS</span>,
+              with applied machine learning experience in healthcare imaging and computer vision systems.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
               <Button
@@ -583,12 +581,7 @@ const Index = () => {
                 data-cursor-hover
                 className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-glow"
               >
-                <img
-                  src={`https://cdn.simpleicons.org/${s.slug}`}
-                  alt={s.name}
-                  className="h-4 w-4"
-                  loading="lazy"
-                />
+                <img src={`https://cdn.simpleicons.org/${s.slug}`} alt={s.name} className="h-4 w-4" loading="lazy" />
               </a>
             ))}
           </div>
