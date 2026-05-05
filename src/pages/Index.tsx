@@ -307,14 +307,9 @@ const Index = () => {
               <span className="mr-2 h-2 w-2 rounded-full bg-primary animate-pulse" />
               Open to SDE roles · 2026
             </Badge>
-            <div className="relative inline-block">
-              <div className="absolute -top-20 left-2 z-10 md:-top-28 md:left-6">
-                <SectionMascot action="sit-laptop" />
-              </div>
-              <h1 className="text-4xl font-bold leading-[1.05] md:text-6xl">
-                PARTHASARATHI <span className="text-gradient">MISHRA</span>
-              </h1>
-            </div>
+            <h1 className="text-4xl font-bold leading-[1.05] md:text-6xl">
+              PARTHASARATHI <span className="text-gradient">MISHRA</span>
+            </h1>
             <p className="text-xl font-medium text-muted-foreground md:text-2xl">
               Software Engineer <span className="text-primary">|</span> Full-Stack Developer{" "}
               <span className="text-primary">|</span> AI/ML
@@ -360,6 +355,9 @@ const Index = () => {
 
           {/* Animated profile photo placeholder */}
           <div className="relative mx-auto h-64 w-64 md:h-80 md:w-80" data-cursor-hover>
+            <div className="absolute -top-20 left-1/2 z-10 -translate-x-1/2 md:-top-28">
+              <SectionMascot action="sit-laptop" className="opacity-95" />
+            </div>
             <div className="absolute inset-0 rounded-full ring-gradient blur-md opacity-70" />
             <div className="absolute inset-0 rounded-full ring-gradient" />
             <div className="absolute inset-[6px] rounded-full bg-background" />
