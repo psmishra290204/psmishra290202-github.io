@@ -396,21 +396,44 @@ const Index = () => {
               <GraduationCap className="h-4 w-4" /> Education
             </div>
             <div className="space-y-4">
-              <div>
-                <p className="font-semibold">B.Tech, Information Technology</p>
-                <p className="text-sm text-muted-foreground">KIIT University · 2022–2026</p>
-                <p className="mt-1 font-mono text-xs text-primary">CGPA 6.98 / 10</p>
-              </div>
-              <div>
-                <p className="font-semibold">HSC (Class XII, CBSE)</p>
-                <p className="text-sm text-muted-foreground">Oneness International School · 2022</p>
-                <p className="mt-1 font-mono text-xs text-primary">82%</p>
-              </div>
-              <div>
-                <p className="font-semibold">SSC (Class X, CBSE)</p>
-                <p className="text-sm text-muted-foreground">Oneness International School · 2020</p>
-                <p className="mt-1 font-mono text-xs text-primary">89.6%</p>
-              </div>
+              {[
+                {
+                  title: "B.Tech, Information Technology",
+                  sub: "KIIT University · 2022–2026",
+                  score: "CGPA 6.98 / 10",
+                  // Replace # with the link to your certificate / marksheet
+                  link: "#",
+                },
+                {
+                  title: "HSC (Class XII, CBSE)",
+                  sub: "Oneness International School · 2022",
+                  score: "82%",
+                  link: "#",
+                },
+                {
+                  title: "SSC (Class X, CBSE)",
+                  sub: "Oneness International School · 2020",
+                  score: "89.6%",
+                  link: "#",
+                },
+              ].map((e) => (
+                <div key={e.title}>
+                  <p className="font-semibold">{e.title}</p>
+                  <p className="text-sm text-muted-foreground">{e.sub}</p>
+                  <div className="mt-1 flex items-center gap-3">
+                    <p className="font-mono text-xs text-primary">{e.score}</p>
+                    <a
+                      href={e.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      data-cursor-hover
+                      className="inline-flex items-center gap-1 font-mono text-xs text-muted-foreground underline-offset-4 transition-colors hover:text-primary hover:underline"
+                    >
+                      <ExternalLink className="h-3 w-3" /> Certificate
+                    </a>
+                  </div>
+                </div>
+              ))}
             </div>
           </Card>
         </div>
