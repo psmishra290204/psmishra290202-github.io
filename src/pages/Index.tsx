@@ -611,7 +611,7 @@ const Index = () => {
             Activities, clubs, hackathons & leadership roles will be added here soon.
           </p>
           <p className="mt-2 font-mono text-[11px] uppercase tracking-widest text-muted-foreground/60">
-            editable section
+            COMING SOON !!
           </p>
         </Card>
       </Section>
@@ -687,7 +687,7 @@ const Index = () => {
           </div>
         </div>
         <p className="mt-10 text-center font-mono text-xs text-muted-foreground">
-          © 2026 Parthasarathi Mishra · Built with React + Tailwind and Love💖
+          © 2026 Parthasarathi Mishra · Built with React + Tailwind and 💖
         </p>
       </section>
     </div>
