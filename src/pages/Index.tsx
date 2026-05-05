@@ -1,7 +1,7 @@
 import { CustomCursor } from "@/components/CustomCursor";
 import { ProjectAnimation } from "@/components/ProjectAnimation";
 import { CodeRainBg } from "@/components/CodeRainBg";
-import { SectionMascot, type MascotAction } from "@/components/SectionMascot";
+import { SectionMascot } from "@/components/SectionMascot";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -147,7 +147,6 @@ const Section = ({
   label,
   title,
   mascotMessage,
-  mascotAction = "wave",
   children,
 }: {
   id: string;
@@ -155,12 +154,11 @@ const Section = ({
   label: string;
   title: string;
   mascotMessage?: string;
-  mascotAction?: MascotAction;
   children: React.ReactNode;
 }) => (
   <section id={id} className="container mx-auto max-w-6xl px-6 py-24">
     <div className="mb-12 flex items-end gap-4">
-      <SectionMascot action={mascotAction} message={mascotMessage} />
+      <SectionMascot message={mascotMessage} />
       <div className="flex items-center gap-3 pb-2">
         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-primary">
           <Icon className="h-5 w-5" />
@@ -242,7 +240,7 @@ const ProjectCard = ({ p }: { p: Project }) => {
 
 const Index = () => {
   return (
-    <div className="relative min-h-screen text-foreground">
+    <div className="min-h-screen bg-background text-foreground">
       <CustomCursor />
       <CodeRainBg />
 
@@ -307,14 +305,9 @@ const Index = () => {
               <span className="mr-2 h-2 w-2 rounded-full bg-primary animate-pulse" />
               Open to SDE roles · 2026
             </Badge>
-            <div className="relative inline-block">
-              <div className="absolute -top-20 left-2 z-10 md:-top-28 md:left-6">
-                <SectionMascot action="sit-laptop" />
-              </div>
-              <h1 className="text-4xl font-bold leading-[1.05] md:text-6xl">
-                PARTHASARATHI <span className="text-gradient">MISHRA</span>
-              </h1>
-            </div>
+            <h1 className="text-4xl font-bold leading-[1.05] md:text-6xl">
+              PARTHASARATHI <span className="text-gradient">MISHRA</span>
+            </h1>
             <p className="text-xl font-medium text-muted-foreground md:text-2xl">
               Software Engineer <span className="text-primary">|</span> Full-Stack Developer{" "}
               <span className="text-primary">|</span> AI/ML
@@ -375,7 +368,7 @@ const Index = () => {
       </header>
 
       {/* About / Stack */}
-      <Section id="about" icon={Code2} label="01 — About" title="Engineer-first mindset" mascotMessage="Hey, let me introduce myself!" mascotAction="wave">
+      <Section id="about" icon={Code2} label="01 — About" title="Engineer-first mindset" mascotMessage="Hey, let me introduce myself!">
         <div className="grid gap-6 md:grid-cols-3">
           <Card className="md:col-span-2 border-border/60 bg-card/50 p-8 shadow-card">
             <p className="text-base leading-relaxed text-muted-foreground">
@@ -477,7 +470,7 @@ const Index = () => {
       </Section>
 
       {/* Experience */}
-      <Section id="experience" icon={Briefcase} label="02 — Experience" title="Internships" mascotMessage="Here's where I've worked!" mascotAction="present">
+      <Section id="experience" icon={Briefcase} label="02 — Experience" title="Internships" mascotMessage="Here's where I've worked!">
         <div className="space-y-4">
           {experience.map((e) => (
             <Card
@@ -505,7 +498,7 @@ const Index = () => {
       </Section>
 
       {/* Projects */}
-      <Section id="projects" icon={Brain} label="03 — Projects" title="Selected work" mascotMessage="Check out my builds!" mascotAction="code">
+      <Section id="projects" icon={Brain} label="03 — Projects" title="Selected work" mascotMessage="Check out my builds!">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => (
             <ProjectCard key={p.name} p={p} />
@@ -514,7 +507,7 @@ const Index = () => {
       </Section>
 
       {/* Certifications */}
-      <Section id="certifications" icon={Award} label="04 — Certifications" title="Continuous learning" mascotMessage="Always learning new things!" mascotAction="think">
+      <Section id="certifications" icon={Award} label="04 — Certifications" title="Continuous learning" mascotMessage="Always learning new things!">
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {certifications.map((c) => (
               <a
@@ -538,7 +531,7 @@ const Index = () => {
         </Section>
 
       {/* Extracurricular placeholder */}
-      <Section id="extracurricular" icon={Sparkles} label="05 — Extracurricular" title="Beyond the keyboard" mascotMessage="Life outside code!" mascotAction="stretch">
+      <Section id="extracurricular" icon={Sparkles} label="05 — Extracurricular" title="Beyond the keyboard" mascotMessage="Life outside code!">
         <Card className="border-dashed border-border/60 bg-card/30 p-10 text-center">
           <p className="text-sm text-muted-foreground">
             Activities, clubs, hackathons & leadership roles will be added here soon.
@@ -552,7 +545,7 @@ const Index = () => {
       {/* Contact */}
       <section id="contact" className="container mx-auto max-w-6xl px-6 py-24">
         <div className="mb-6 flex justify-center">
-          <SectionMascot action="celebrate" message="Let's connect!" />
+          <SectionMascot message="Let's connect!" />
         </div>
         <div className="rounded-2xl border-2 border-border bg-card p-10 text-center shadow-card md:p-16">
           <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">06 — Contact</p>
