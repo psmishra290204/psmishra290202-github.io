@@ -29,13 +29,13 @@ const sources: Record<MascotAction, string> = {
 };
 
 const animClass: Record<MascotAction, string> = {
-  wave: "anim-mascot-wave-img",
-  present: "anim-mascot-bob",
-  code: "anim-mascot-bob",
-  think: "anim-mascot-bob",
-  celebrate: "anim-mascot-cheer-img",
-  stretch: "anim-mascot-bob",
-  "sit-laptop": "anim-mascot-focus",
+  wave: "",
+  present: "",
+  code: "",
+  think: "",
+  celebrate: "",
+  stretch: "",
+  "sit-laptop": "",
 };
 
 export const SectionMascot = ({
@@ -63,8 +63,8 @@ export const SectionMascot = ({
     : sources[action];
   const anim = isSitting
     ? sitPhase === "wave"
-      ? "anim-mascot-wave-img"
-      : "anim-mascot-focus"
+      ? "anim-sit-wave"
+      : "anim-sit-type"
     : animClass[action];
 
   return (
