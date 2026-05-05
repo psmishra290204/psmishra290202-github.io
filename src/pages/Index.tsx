@@ -549,7 +549,7 @@ const Index = () => {
               </a>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <a href="www.linkedin.com/in/parthasarathi-mishra-969b5126a" target="_blank" rel="noreferrer">
+              <a href="https://www.linkedin.com/in/parthasarathi-mishra-969b5126a/" target="_blank" rel="noreferrer">
                 <Linkedin className="mr-2 h-4 w-4" />
                 LinkedIn
               </a>
@@ -563,16 +563,16 @@ const Index = () => {
           </div>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             {[
-              { name: "Facebook", slug: "facebook", url: "https://www.facebook.com/profile.php?id=61551571820413" },
+              { name: "Facebook", slug: "facebook", url: "https://facebook.com/61551571820413" },
               {
                 name: "Instagram",
                 slug: "instagram",
-                url: "https://www.instagram.com/deja_vu_2902?igsh=NzJ0Ympwc3UzYTVn",
+                url: "https://www.instagram.com/deja_vu_2902/",
               },
               {
                 name: "Quora",
                 slug: "quora",
-                url: "https://www.quora.com/profile/Parthasarathi-Mishra-23?ch=10&oid=1889804417&share=bbf0103f&srid=hMMY5c&target_type=user",
+                url: "https://www.quora.com/profile/Parthasarathi-Mishra-23",
               },
               {
                 name: "Reddit",
