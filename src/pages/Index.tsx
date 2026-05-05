@@ -128,17 +128,61 @@ const projects = [
 
 const certifications = [
   // Replace href "#" with the actual certificate / PDF URL for each item.
-  { name: "Financial Accounting – Advanced Topics", issuer: "UIUC", href: "#" },
-  { name: "Data Science with Python", issuer: "Coincent.ai", href: "#" },
-  { name: "Introduction in Applied Business Analytics", issuer: "UIUC", href: "#" },
-  { name: "Intro to Business Analytics: Communicating with Data", issuer: "UIUC", href: "#" },
-  { name: "Generative AI: Introduction and Applications", issuer: "IBM", href: "#" },
-  { name: "Generative AI: Prompt Engineering Basics", issuer: "IBM", href: "#" },
-  { name: "Prompt Engineering for ChatGPT", issuer: "Vanderbilt", href: "#" },
-  { name: "Cybersecurity Intern Certificate", issuer: "Ceeras", href: "#" },
-  { name: "Android Developer Virtual Internship", issuer: "Google for Developers", href: "#" },
-  { name: "Python Full Stack Developer Virtual Internship", issuer: "EduSkills Foundation", href: "#" },
-  { name: "Fundamentals of Cybersecurity (EDU-102)", issuer: "Zscaler", href: "#" },
+  {
+    name: "Financial Accounting – Advanced Topics",
+    issuer: "ILLIONIS",
+    href: "https://drive.google.com/file/d/1CLhd8_35h5MlqiAADqh6td5fGHsbU_DV/view?usp=sharing",
+  },
+  {
+    name: "Data Science with Python",
+    issuer: "Coincent.ai",
+    href: "https://drive.google.com/file/d/1IP6uPJQoXM95m-2aJi57DyyjSO3WM6Og/view?usp=drive_link",
+  },
+  {
+    name: "Introduction in Applied Business Analytics",
+    issuer: "ILLIONIS",
+    href: "https://drive.google.com/file/d/1WMQpWo_9xwWtoEGTRZDgKmgmzVcWzl_Y/view?usp=drive_link",
+  },
+  {
+    name: "Intro to Business Analytics: Communicating with Data",
+    issuer: "ILLIONIS",
+    href: "https://drive.google.com/file/d/1rff7Lmda49fngD8B2w0cxl7tiYjOddzl/view?usp=drive_link",
+  },
+  {
+    name: "Generative AI: Introduction and Applications",
+    issuer: "IBM",
+    href: "https://drive.google.com/file/d/1Bb9qBYhg-B2F-lnLC3dnWQbx5HvE7fnN/view?usp=drive_link",
+  },
+  {
+    name: "Generative AI: Prompt Engineering Basics",
+    issuer: "IBM",
+    href: "https://drive.google.com/file/d/17hLP7JQnMk4vyMGfI1mgjPntXOiLYjpA/view?usp=drive_link",
+  },
+  {
+    name: "Prompt Engineering for ChatGPT",
+    issuer: "Vanderbilt University",
+    href: "https://drive.google.com/file/d/1-fGqSYmwpK15ZsdzkJnR5j5TyWEf7cKR/view?usp=drive_link",
+  },
+  {
+    name: "Cybersecurity Intern Certificate",
+    issuer: "Ceeras",
+    href: "https://drive.google.com/file/d/11wngNCSHupn2v37PI55Y0s0LcYxbhBN3/view?usp=drive_link",
+  },
+  {
+    name: "Android Developer Virtual Internship",
+    issuer: "Google for Developers",
+    href: "https://drive.google.com/file/d/1gJD03X93UAUMB6TLpiYRpSSdI9KvbKNl/view?usp=drive_link",
+  },
+  {
+    name: "Python Full Stack Developer Virtual Internship",
+    issuer: "EduSkills Foundation",
+    href: "https://drive.google.com/file/d/1QsV7_ajnYFfatAHL16H18OFFAbPgJzNC/view?usp=drive_link",
+  },
+  {
+    name: "Fundamentals of Cybersecurity (EDU-102)",
+    issuer: "Zscaler",
+    href: "https://drive.google.com/file/d/1xFG2aYPLNIaqb5tOHJfu8vkLLbq8MCcU/view?usp=drive_link",
+  },
 ];
 
 const Section = ({
@@ -368,7 +412,13 @@ const Index = () => {
       </header>
 
       {/* About / Stack */}
-      <Section id="about" icon={Code2} label="01 — About" title="Engineer-first mindset" mascotMessage="Hey, let me introduce myself!">
+      <Section
+        id="about"
+        icon={Code2}
+        label="01 — About"
+        title="Engineer-first mindset"
+        mascotMessage="Hey, let me introduce myself!"
+      >
         <div className="grid gap-6 md:grid-cols-3">
           <Card className="md:col-span-2 border-border/60 bg-card/50 p-8 shadow-card">
             <p className="text-base leading-relaxed text-muted-foreground">
@@ -470,7 +520,13 @@ const Index = () => {
       </Section>
 
       {/* Experience */}
-      <Section id="experience" icon={Briefcase} label="02 — Experience" title="Internships" mascotMessage="Here's where I've worked!">
+      <Section
+        id="experience"
+        icon={Briefcase}
+        label="02 — Experience"
+        title="Internships"
+        mascotMessage="Here's where I've worked!"
+      >
         <div className="space-y-4">
           {experience.map((e) => (
             <Card
@@ -498,7 +554,13 @@ const Index = () => {
       </Section>
 
       {/* Projects */}
-      <Section id="projects" icon={Brain} label="03 — Projects" title="Selected work" mascotMessage="Check out my builds!">
+      <Section
+        id="projects"
+        icon={Brain}
+        label="03 — Projects"
+        title="Selected work"
+        mascotMessage="Check out my builds!"
+      >
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => (
             <ProjectCard key={p.name} p={p} />
@@ -507,31 +569,43 @@ const Index = () => {
       </Section>
 
       {/* Certifications */}
-      <Section id="certifications" icon={Award} label="04 — Certifications" title="Continuous learning" mascotMessage="Always learning new things!">
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {certifications.map((c) => (
-              <a
-                key={c.name}
-                href={c.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-cursor-hover
-                className="group relative flex items-start gap-3 overflow-hidden rounded-lg border border-border/60 bg-card/60 p-4 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-primary/60 hover:shadow-glow"
-              >
-                <Award className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <div className="min-w-0">
-                  <p className="text-sm font-medium leading-snug">{c.name}</p>
-                  <p className="font-mono text-[11px] text-muted-foreground">{c.issuer}</p>
-                </div>
-                <ExternalLink className="ml-auto h-3.5 w-3.5 shrink-0 opacity-0 transition-opacity group-hover:opacity-70" />
-                <span className="pointer-events-none absolute inset-0 rounded-lg ring-0 ring-primary/0 transition-all group-hover:ring-2 group-hover:ring-primary/30" />
-              </a>
-            ))}
-          </div>
-        </Section>
+      <Section
+        id="certifications"
+        icon={Award}
+        label="04 — Certifications"
+        title="Continuous learning"
+        mascotMessage="Always learning new things!"
+      >
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {certifications.map((c) => (
+            <a
+              key={c.name}
+              href={c.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-cursor-hover
+              className="group relative flex items-start gap-3 overflow-hidden rounded-lg border border-border/60 bg-card/60 p-4 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:border-primary/60 hover:shadow-glow"
+            >
+              <Award className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+              <div className="min-w-0">
+                <p className="text-sm font-medium leading-snug">{c.name}</p>
+                <p className="font-mono text-[11px] text-muted-foreground">{c.issuer}</p>
+              </div>
+              <ExternalLink className="ml-auto h-3.5 w-3.5 shrink-0 opacity-0 transition-opacity group-hover:opacity-70" />
+              <span className="pointer-events-none absolute inset-0 rounded-lg ring-0 ring-primary/0 transition-all group-hover:ring-2 group-hover:ring-primary/30" />
+            </a>
+          ))}
+        </div>
+      </Section>
 
       {/* Extracurricular placeholder */}
-      <Section id="extracurricular" icon={Sparkles} label="05 — Extracurricular" title="Beyond the keyboard" mascotMessage="Life outside code!">
+      <Section
+        id="extracurricular"
+        icon={Sparkles}
+        label="05 — Extracurricular"
+        title="Beyond the keyboard"
+        mascotMessage="Life outside code!"
+      >
         <Card className="border-dashed border-border/60 bg-card/30 p-10 text-center">
           <p className="text-sm text-muted-foreground">
             Activities, clubs, hackathons & leadership roles will be added here soon.
