@@ -567,6 +567,31 @@ const Index = () => {
               </a>
             </Button>
           </div>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            {[
+              { name: "Facebook", slug: "facebook", url: "https://facebook.com/" },
+              { name: "Instagram", slug: "instagram", url: "https://instagram.com/" },
+              { name: "Quora", slug: "quora", url: "https://quora.com/" },
+              { name: "Reddit", slug: "reddit", url: "https://reddit.com/" },
+            ].map((s) => (
+              <a
+                key={s.name}
+                href={s.url}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={s.name}
+                data-cursor-hover
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-glow"
+              >
+                <img
+                  src={`https://cdn.simpleicons.org/${s.slug}`}
+                  alt={s.name}
+                  className="h-4 w-4"
+                  loading="lazy"
+                />
+              </a>
+            ))}
+          </div>
         </div>
         <p className="mt-10 text-center font-mono text-xs text-muted-foreground">
           © 2026 Parthasarathi Mishra · Built with React + Tailwind
