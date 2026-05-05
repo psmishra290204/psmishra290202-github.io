@@ -1,7 +1,7 @@
 import { CustomCursor } from "@/components/CustomCursor";
 import { ProjectAnimation } from "@/components/ProjectAnimation";
 import { CodeRainBg } from "@/components/CodeRainBg";
-import { ScrollCar } from "@/components/ScrollCar";
+import { SectionMascot } from "@/components/SectionMascot";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -146,22 +146,27 @@ const Section = ({
   icon: Icon,
   label,
   title,
+  mascotMessage,
   children,
 }: {
   id: string;
   icon: any;
   label: string;
   title: string;
+  mascotMessage?: string;
   children: React.ReactNode;
 }) => (
   <section id={id} className="container mx-auto max-w-6xl px-6 py-24">
-    <div className="mb-12 flex items-center gap-3">
-      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-primary">
-        <Icon className="h-5 w-5" />
-      </div>
-      <div>
-        <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">{label}</p>
-        <h2 className="text-3xl font-bold md:text-4xl">{title}</h2>
+    <div className="mb-12 flex items-end gap-4">
+      <SectionMascot message={mascotMessage} />
+      <div className="flex items-center gap-3 pb-2">
+        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-primary">
+          <Icon className="h-5 w-5" />
+        </div>
+        <div>
+          <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">{label}</p>
+          <h2 className="text-3xl font-bold md:text-4xl">{title}</h2>
+        </div>
       </div>
     </div>
     {children}
@@ -238,7 +243,6 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       <CustomCursor />
       <CodeRainBg />
-      <ScrollCar sectionIds={["top", "about", "experience", "education", "projects", "certifications", "extracurricular", "contact"]} />
 
       {/* Editable background watermark */}
       <div
@@ -364,7 +368,7 @@ const Index = () => {
       </header>
 
       {/* About / Stack */}
-      <Section id="about" icon={Code2} label="01 — About" title="Engineer-first mindset">
+      <Section id="about" icon={Code2} label="01 — About" title="Engineer-first mindset" mascotMessage="Hey, let me introduce myself!">
         <div className="grid gap-6 md:grid-cols-3">
           <Card className="md:col-span-2 border-border/60 bg-card/50 p-8 shadow-card">
             <p className="text-base leading-relaxed text-muted-foreground">
@@ -466,7 +470,7 @@ const Index = () => {
       </Section>
 
       {/* Experience */}
-      <Section id="experience" icon={Briefcase} label="02 — Experience" title="Internships">
+      <Section id="experience" icon={Briefcase} label="02 — Experience" title="Internships" mascotMessage="Here's where I've worked!">
         <div className="space-y-4">
           {experience.map((e) => (
             <Card
@@ -494,7 +498,7 @@ const Index = () => {
       </Section>
 
       {/* Projects */}
-      <Section id="projects" icon={Brain} label="03 — Projects" title="Selected work">
+      <Section id="projects" icon={Brain} label="03 — Projects" title="Selected work" mascotMessage="Check out my builds!">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => (
             <ProjectCard key={p.name} p={p} />
@@ -503,7 +507,7 @@ const Index = () => {
       </Section>
 
       {/* Certifications */}
-      <Section id="certifications" icon={Award} label="04 — Certifications" title="Continuous learning">
+      <Section id="certifications" icon={Award} label="04 — Certifications" title="Continuous learning" mascotMessage="Always learning new things!">
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {certifications.map((c) => (
               <a
@@ -527,7 +531,7 @@ const Index = () => {
         </Section>
 
       {/* Extracurricular placeholder */}
-      <Section id="extracurricular" icon={Sparkles} label="05 — Extracurricular" title="Beyond the keyboard">
+      <Section id="extracurricular" icon={Sparkles} label="05 — Extracurricular" title="Beyond the keyboard" mascotMessage="Life outside code!">
         <Card className="border-dashed border-border/60 bg-card/30 p-10 text-center">
           <p className="text-sm text-muted-foreground">
             Activities, clubs, hackathons & leadership roles will be added here soon.
@@ -540,6 +544,9 @@ const Index = () => {
 
       {/* Contact */}
       <section id="contact" className="container mx-auto max-w-6xl px-6 py-24">
+        <div className="mb-6 flex justify-center">
+          <SectionMascot message="Let's connect!" />
+        </div>
         <div className="rounded-2xl border-2 border-border bg-card p-10 text-center shadow-card md:p-16">
           <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">06 — Contact</p>
           <h2 className="mt-3 text-3xl font-bold md:text-5xl">
