@@ -1,6 +1,7 @@
 import { CustomCursor } from "@/components/CustomCursor";
 import { ProjectAnimation } from "@/components/ProjectAnimation";
 import { CodeRainBg } from "@/components/CodeRainBg";
+import { ScrollCar } from "@/components/ScrollCar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -500,9 +501,7 @@ const Index = () => {
       </Section>
 
       {/* Certifications */}
-      <div className="relative">
-        <CodeRainBg />
-        <Section id="certifications" icon={Award} label="04 — Certifications" title="Continuous learning">
+      <Section id="certifications" icon={Award} label="04 — Certifications" title="Continuous learning">
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {certifications.map((c) => (
               <a
@@ -524,7 +523,6 @@ const Index = () => {
             ))}
           </div>
         </Section>
-      </div>
 
       {/* Extracurricular placeholder */}
       <Section id="extracurricular" icon={Sparkles} label="05 — Extracurricular" title="Beyond the keyboard">
