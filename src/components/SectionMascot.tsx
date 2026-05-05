@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import mascotWave from "@/assets/mascot-wave.png";
 import mascotPresent from "@/assets/mascot-present.png";
 import mascotCode from "@/assets/mascot-code.png";
 import mascotThink from "@/assets/mascot-think.png";
 import mascotCelebrate from "@/assets/mascot-celebrate.png";
 import mascotStretch from "@/assets/mascot-stretch.png";
-import mascotSitting from "@/assets/mascot-sitting.png";
 import mascotSitWave from "@/assets/mascot-sit-wave.png";
 import mascotSitTyping from "@/assets/mascot-sit-typing.png";
 
@@ -25,17 +24,18 @@ const sources: Record<MascotAction, string> = {
   think: mascotThink,
   celebrate: mascotCelebrate,
   stretch: mascotStretch,
-  "sit-laptop": mascotSitting,
+  "sit-laptop": mascotSitWave,
 };
 
-const animClass: Record<MascotAction, string> = {
-  wave: "",
-  present: "",
-  code: "",
-  think: "",
-  celebrate: "",
-  stretch: "",
-  "sit-laptop": "",
+// Animation class to play ONCE when the section enters the viewport.
+const activeAnim: Record<MascotAction, string> = {
+  wave: "anim-sit-wave",
+  present: "anim-mascot-present-once",
+  code: "anim-mascot-type-once",
+  think: "anim-mascot-think-once",
+  celebrate: "anim-mascot-cheer-once",
+  stretch: "anim-mascot-stretch-once",
+  "sit-laptop": "anim-sit-wave",
 };
 
 export const SectionMascot = ({
@@ -48,12 +48,38 @@ export const SectionMascot = ({
   className?: string;
 }) => {
   const isSitting = action === "sit-laptop";
-  // For the sitting mascot: wave for 5s, then type forever.
-  const [sitPhase, setSitPhase] = React.useState<"wave" | "type">("wave");
-  React.useEffect(() => {
+
+  // Sitting mascot lives in the hero — auto-start: wave 5s, then type forever.
+  const [sitPhase, setSitPhase] = useState<"wave" | "type">("wave");
+  useEffect(() => {
     if (!isSitting) return;
     const t = setTimeout(() => setSitPhase("type"), 5000);
     return () => clearTimeout(t);
+  }, [isSitting]);
+
+  // For section mascots: trigger animation when they scroll into view.
+  const wrapRef = useRef<HTMLDivElement | null>(null);
+  const [active, setActive] = useState(false);
+  useEffect(() => {
+    if (isSitting) return;
+    const el = wrapRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            setActive(false);
+            // restart animation by re-adding the class on next frame
+            requestAnimationFrame(() => setActive(true));
+          } else {
+            setActive(false);
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
   }, [isSitting]);
 
   const src = isSitting
@@ -65,10 +91,13 @@ export const SectionMascot = ({
     ? sitPhase === "wave"
       ? "anim-sit-wave"
       : "anim-sit-type"
-    : animClass[action];
+    : active
+      ? activeAnim[action]
+      : "";
 
   return (
     <div
+      ref={wrapRef}
       aria-hidden
       className={`relative shrink-0 ${
         isSitting ? "h-40 w-40 md:h-56 md:w-56" : "h-36 w-28 md:h-48 md:w-36"
