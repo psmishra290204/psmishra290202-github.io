@@ -410,38 +410,9 @@ const Index = () => {
 
       {/* Projects */}
       <Section id="projects" icon={Brain} label="03 — Projects" title="Selected work">
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => (
-            <Card
-              key={p.name}
-              className="group flex flex-col border-border/60 bg-card/50 p-6 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow"
-            >
-              <div className="mb-4 h-32 w-full overflow-hidden rounded-lg border border-border/60 bg-gradient-to-br from-secondary/60 to-secondary/20">
-                <ProjectAnimation kind={p.anim} />
-              </div>
-              <div className="mb-3 flex items-start justify-between">
-                <h3 className="text-lg font-semibold">{p.name}</h3>
-                <ExternalLink className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
-              </div>
-              <p className="font-mono text-[11px] uppercase tracking-widest text-primary">{p.tag}</p>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
-              <div className="mt-4 flex flex-wrap gap-1.5">
-                {p.stack.map((s) => {
-                  const slug = techIcon[s];
-                  return (
-                    <span
-                      key={s}
-                      className="inline-flex items-center gap-1 rounded-md border border-border bg-secondary/40 px-2 py-0.5 font-mono text-[10px]"
-                    >
-                      {slug && (
-                        <img src={`https://cdn.simpleicons.org/${slug}`} alt="" className="h-3 w-3" loading="lazy" />
-                      )}
-                      {s}
-                    </span>
-                  );
-                })}
-              </div>
-            </Card>
+            <ProjectCard key={p.name} p={p} />
           ))}
         </div>
       </Section>
