@@ -355,8 +355,9 @@ const Index = () => {
 
           {/* Animated profile photo placeholder */}
           <div className="relative mx-auto h-64 w-64 md:h-80 md:w-80" data-cursor-hover>
-            <div className="absolute -top-20 left-1/2 z-10 -translate-x-1/2 md:-top-28">
-              <SectionMascot action="sit-laptop" className="opacity-95" />
+            {/* Mascot sits to the side of the photo so it never overlaps */}
+            <div className="pointer-events-none absolute -right-24 -bottom-6 z-10 hidden md:block">
+              <SectionMascot action="sit-laptop" />
             </div>
             <div className="absolute inset-0 rounded-full ring-gradient blur-md opacity-70" />
             <div className="absolute inset-0 rounded-full ring-gradient" />
@@ -367,6 +368,10 @@ const Index = () => {
                 <p className="font-mono text-xs uppercase tracking-widest">Photo</p>
                 <p className="font-mono text-[10px] text-muted-foreground/60">add /public/profile.jpg</p>
               </div>
+            </div>
+            {/* Mobile: place mascot below the photo */}
+            <div className="pointer-events-none mt-4 flex justify-center md:hidden">
+              <SectionMascot action="sit-laptop" />
             </div>
           </div>
         </div>
