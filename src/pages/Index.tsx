@@ -165,7 +165,7 @@ const certifications = [
   },
   {
     name: "Cybersecurity Intern Certificate",
-    issuer: "Ceeras",
+    issuer: "Ceeras IT Services",
     href: "https://drive.google.com/file/d/11wngNCSHupn2v37PI55Y0s0LcYxbhBN3/view?usp=drive_link",
   },
   {
