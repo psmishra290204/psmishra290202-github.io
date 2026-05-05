@@ -63,30 +63,23 @@ const techIcon: Record<string, string> = {
 const experience = [
   {
     role: "Penetration Tester Intern",
-    company: "Ceeras Cybersecurity",
+    company: "Ceeras IT Services",
     period: "Jan 2025 – Apr 2025",
     points: [
       "Performed VAPT on web applications and internal network assets.",
-      "Tools: Nmap, Burp Suite, Metasploit, Wireshark, OWASP ZAP.",
+      "Developed robust APIs and interactive UI with security checks.",
       "Built and secured dynamic web apps using MERN stack",
     ],
   },
-  {
-    role: "Business Development Executive Intern",
-    company: "ClickUptel",
-    period: "May 2025",
-    points: [
-      "Drove client outreach and partnership pipeline for telecom SaaS products.",
-      "Coordinated cross-functional efforts between sales and product teams.",
-    ],
-  },
+
   {
     role: "Business Analyst Intern",
-    company: "Coreline Solutions Pvt Ltd",
+    company: "Coreline Solutions Pvt Ltd.",
     period: "Jun 2025 – Aug 2025",
     points: [
       "Coordinated with teams to track requirements and project progress.",
       "Analyzed data to support business decisions and process improvements.",
+      "Gathered and documented business requirements from stakeholders",
     ],
   },
 ];
