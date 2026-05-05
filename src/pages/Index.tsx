@@ -431,7 +431,7 @@ const Index = () => {
             </p>
             <div className="mt-6 grid grid-cols-3 gap-4">
               <div>
-                <p className="text-3xl font-bold text-gradient">3+</p>
+                <p className="text-3xl font-bold text-gradient">2</p>
                 <p className="text-xs text-muted-foreground">Internships</p>
               </div>
               <div>
