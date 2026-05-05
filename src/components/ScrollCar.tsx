@@ -118,9 +118,7 @@ export const ScrollCar = ({ sectionIds }: { sectionIds: string[] }) => {
     });
   }, [sectionFracs, pathLen, activeIdx, sectionIds]);
 
-  if (!vw || !vh) {
-    return <div ref={() => { setVw(window.innerWidth); setVh(window.innerHeight); }} />;
-  }
+  if (!vw || !vh) return null;
 
   return (
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-[5] hidden md:block">
