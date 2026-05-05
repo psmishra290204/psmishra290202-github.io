@@ -314,7 +314,7 @@ const Index = () => {
               <span className="text-primary">|</span> Applied AI/ML
             </p>
             <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              B.Tech (IT) student at <span className="text-foreground">KIIT (2022–2026, CGPA 6.98/10)</span> building
+              B.Tech (IT) student at <span className="text-foreground">KIIT (2022–2026)</span> building
               scalable full-stack applications using{" "}
               <span className="text-foreground">FastAPI, React, Docker, and AWS</span>, with applied machine learning
               experience in healthcare imaging and computer vision systems.
@@ -376,11 +376,7 @@ const Index = () => {
               My ML work sits on top of a solid SDE foundation: containerized services, CI-friendly pipelines, and
               reproducible experiments.
             </p>
-            <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
-              <div>
-                <p className="text-3xl font-bold text-gradient">6.98</p>
-                <p className="text-xs text-muted-foreground">CGPA / 10</p>
-              </div>
+            <div className="mt-6 grid grid-cols-3 gap-4">
               <div>
                 <p className="text-3xl font-bold text-gradient">3+</p>
                 <p className="text-xs text-muted-foreground">Internships</p>
@@ -400,21 +396,44 @@ const Index = () => {
               <GraduationCap className="h-4 w-4" /> Education
             </div>
             <div className="space-y-4">
-              <div>
-                <p className="font-semibold">B.Tech, Information Technology</p>
-                <p className="text-sm text-muted-foreground">KIIT University · 2022–2026</p>
-                <p className="mt-1 font-mono text-xs text-primary">CGPA 6.98 / 10</p>
-              </div>
-              <div>
-                <p className="font-semibold">HSC (Class XII, CBSE)</p>
-                <p className="text-sm text-muted-foreground">Oneness International School · 2022</p>
-                <p className="mt-1 font-mono text-xs text-primary">82%</p>
-              </div>
-              <div>
-                <p className="font-semibold">SSC (Class X, CBSE)</p>
-                <p className="text-sm text-muted-foreground">Oneness International School · 2020</p>
-                <p className="mt-1 font-mono text-xs text-primary">89.6%</p>
-              </div>
+              {[
+                {
+                  title: "B.Tech, Information Technology",
+                  sub: "KIIT University · 2022–2026",
+                  score: "CGPA 6.98 / 10",
+                  // Replace # with the link to your certificate / marksheet
+                  link: "#",
+                },
+                {
+                  title: "HSC (Class XII, CBSE)",
+                  sub: "Oneness International School · 2022",
+                  score: "82%",
+                  link: "#",
+                },
+                {
+                  title: "SSC (Class X, CBSE)",
+                  sub: "Oneness International School · 2020",
+                  score: "89.6%",
+                  link: "#",
+                },
+              ].map((e) => (
+                <div key={e.title}>
+                  <p className="font-semibold">{e.title}</p>
+                  <p className="text-sm text-muted-foreground">{e.sub}</p>
+                  <div className="mt-1 flex items-center gap-3">
+                    <p className="font-mono text-xs text-primary">{e.score}</p>
+                    <a
+                      href={e.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      data-cursor-hover
+                      className="inline-flex items-center gap-1 font-mono text-xs text-muted-foreground underline-offset-4 transition-colors hover:text-primary hover:underline"
+                    >
+                      <ExternalLink className="h-3 w-3" /> Certificate
+                    </a>
+                  </div>
+                </div>
+              ))}
             </div>
           </Card>
         </div>
@@ -547,6 +566,31 @@ const Index = () => {
                 GitHub
               </a>
             </Button>
+          </div>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            {[
+              { name: "Facebook", slug: "facebook", url: "https://facebook.com/" },
+              { name: "Instagram", slug: "instagram", url: "https://instagram.com/" },
+              { name: "Quora", slug: "quora", url: "https://quora.com/" },
+              { name: "Reddit", slug: "reddit", url: "https://reddit.com/" },
+            ].map((s) => (
+              <a
+                key={s.name}
+                href={s.url}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={s.name}
+                data-cursor-hover
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-card transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-glow"
+              >
+                <img
+                  src={`https://cdn.simpleicons.org/${s.slug}`}
+                  alt={s.name}
+                  className="h-4 w-4"
+                  loading="lazy"
+                />
+              </a>
+            ))}
           </div>
         </div>
         <p className="mt-10 text-center font-mono text-xs text-muted-foreground">
