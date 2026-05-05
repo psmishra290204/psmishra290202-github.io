@@ -3,6 +3,8 @@ import { ProjectAnimation } from "@/components/ProjectAnimation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import {
   Github,
   Linkedin,
@@ -98,6 +100,11 @@ const projects = [
     desc: "Browser-based pose estimator running fully client-side with live webcam input and skeletal overlay rendering.",
     stack: ["React.js", "TensorFlow.js", "MediaPipe", "Webcam API", "CSS"],
     anim: "pose" as const,
+    results: [
+      "Runs 100% in-browser, zero backend cost",
+      "Real-time 30+ FPS skeletal overlay",
+      "Responsive UI with webcam permissions handled gracefully",
+    ],
   },
   {
     name: "EEG Emotion Recognition",
@@ -105,6 +112,11 @@ const projects = [
     desc: "End-to-end pipeline using PLV & Coherence connectivity features with a hybrid CNN + SVM classifier.",
     stack: ["Python", "CNN", "SVM", "PLV", "Coherence", "86% accuracy"],
     anim: "eeg" as const,
+    results: [
+      "86% classification accuracy on benchmark dataset",
+      "Hybrid CNN + SVM outperformed baselines",
+      "Reproducible preprocessing pipeline (PLV + Coherence)",
+    ],
   },
   {
     name: "Eye Disease Detection",
@@ -112,6 +124,11 @@ const projects = [
     desc: "CNN-based classifier for retinal images detecting common eye diseases from fundus photography.",
     stack: ["Python", "CNN", "Keras", "OpenCV"],
     anim: "eye" as const,
+    results: [
+      "Multi-class CNN over fundus image dataset",
+      "Image augmentation + transfer learning",
+      "Modular Keras pipeline for retraining",
+    ],
   },
 ];
 
