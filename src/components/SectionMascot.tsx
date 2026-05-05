@@ -62,7 +62,7 @@ export const SectionMascot = ({
       <img
         src={sources[action]}
         alt=""
-        className={`h-full w-full object-contain ${animClass[action]}`}
+        className={`h-full w-full object-contain opacity-90 drop-shadow-[0_10px_28px_hsl(var(--foreground)/0.14)] ${animClass[action]}`}
         draggable={false}
       />
     </div>
