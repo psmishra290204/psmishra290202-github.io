@@ -17,17 +17,21 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 
-const strengths = [
-  "Python",
-  "Full-Stack Development",
-  "Data Structures",
-  "React.js",
-  "MongoDB",
-];
+const strengths = ["Python", "Full-Stack Development", "Data Structures", "React.js", "MongoDB"];
 
 const techStack = [
-  "FastAPI", "React", "TypeScript", "Docker", "AWS", "Node.js",
-  "PostgreSQL", "MongoDB", "TensorFlow", "PyTorch", "Git", "Linux",
+  "FastAPI",
+  "React",
+  "TypeScript",
+  "Docker",
+  "AWS",
+  "Node.js",
+  "PostgreSQL",
+  "MongoDB",
+  "TensorFlow",
+  "PyTorch",
+  "Git",
+  "Linux",
 ];
 
 // Map a tech name -> simpleicons.org slug
@@ -178,22 +182,40 @@ const Index = () => {
             <span className="text-muted-foreground">.dev</span>
           </a>
           <div className="hidden gap-8 text-sm text-muted-foreground md:flex">
-            <a href="#about" className="hover:text-foreground transition-colors">About</a>
-            <a href="#experience" className="hover:text-foreground transition-colors">Experience</a>
-            <a href="#projects" className="hover:text-foreground transition-colors">Projects</a>
-            <a href="#certifications" className="hover:text-foreground transition-colors">Certs</a>
-            <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
+            <a href="#about" className="hover:text-foreground transition-colors">
+              About
+            </a>
+            <a href="#experience" className="hover:text-foreground transition-colors">
+              Experience
+            </a>
+            <a href="#projects" className="hover:text-foreground transition-colors">
+              Projects
+            </a>
+            <a href="#certifications" className="hover:text-foreground transition-colors">
+              Certs
+            </a>
+            <a href="#contact" className="hover:text-foreground transition-colors">
+              Contact
+            </a>
           </div>
           <Button asChild size="sm" variant="outline">
-            <a href="mailto:psmishra648@gmail.com"><Mail className="mr-2 h-4 w-4" />Hire me</a>
+            <a href="mailto:psmishra648@gmail.com">
+              <Mail className="mr-2 h-4 w-4" />
+              Hire me
+            </a>
           </Button>
         </div>
       </nav>
 
       {/* Hero */}
       <header id="top" className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 opacity-30"
-             style={{ background: "radial-gradient(60% 60% at 30% 20%, hsl(var(--primary)/0.25), transparent), radial-gradient(50% 50% at 80% 60%, hsl(var(--accent)/0.2), transparent)" }} />
+        <div
+          className="absolute inset-0 -z-10 opacity-30"
+          style={{
+            background:
+              "radial-gradient(60% 60% at 30% 20%, hsl(var(--primary)/0.25), transparent), radial-gradient(50% 50% at 80% 60%, hsl(var(--accent)/0.2), transparent)",
+          }}
+        />
         <div className="container mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 md:grid-cols-[1fr_auto] md:py-32">
           <div className="space-y-6">
             <Badge variant="outline" className="font-mono text-xs">
@@ -208,19 +230,32 @@ const Index = () => {
               <span className="text-primary">|</span> Applied AI/ML
             </p>
             <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              B.Tech (IT) student at <span className="text-foreground">KIIT (2022–2026, CGPA 6.98/10)</span>{" "}
-              building scalable full-stack applications using <span className="text-foreground">FastAPI, React, Docker, and AWS</span>,
-              with applied machine learning experience in healthcare imaging and computer vision systems.
+              B.Tech (IT) student at <span className="text-foreground">KIIT (2022–2026, CGPA 6.98/10)</span> building
+              scalable full-stack applications using{" "}
+              <span className="text-foreground">FastAPI, React, Docker, and AWS</span>, with applied machine learning
+              experience in healthcare imaging and computer vision systems.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
-              <Button asChild size="lg" className="bg-gradient-primary text-primary-foreground shadow-glow hover:opacity-90">
-                <a href="#projects">View Projects <ArrowUpRight className="ml-1 h-4 w-4" /></a>
+              <Button
+                asChild
+                size="lg"
+                className="bg-gradient-primary text-primary-foreground shadow-glow hover:opacity-90"
+              >
+                <a href="#projects">
+                  View Projects <ArrowUpRight className="ml-1 h-4 w-4" />
+                </a>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <a href="https://github.com/" target="_blank" rel="noreferrer"><Github className="mr-2 h-4 w-4" />GitHub</a>
+                <a href="https://github.com/" target="_blank" rel="noreferrer">
+                  <Github className="mr-2 h-4 w-4" />
+                  GitHub
+                </a>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <a href="https://linkedin.com/" target="_blank" rel="noreferrer"><Linkedin className="mr-2 h-4 w-4" />LinkedIn</a>
+                <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
+                  <Linkedin className="mr-2 h-4 w-4" />
+                  LinkedIn
+                </a>
               </Button>
             </div>
             <div className="flex flex-wrap gap-2 pt-4">
@@ -253,15 +288,27 @@ const Index = () => {
         <div className="grid gap-6 md:grid-cols-3">
           <Card className="md:col-span-2 border-border/60 bg-card/50 p-8 shadow-card">
             <p className="text-base leading-relaxed text-muted-foreground">
-              I focus on shipping production-ready software — clean APIs, type-safe interfaces, and
-              measurable outcomes. My ML work sits on top of a solid SDE foundation: containerized
-              services, CI-friendly pipelines, and reproducible experiments.
+              I focus on shipping production-ready software — clean APIs, type-safe interfaces, and measurable outcomes.
+              My ML work sits on top of a solid SDE foundation: containerized services, CI-friendly pipelines, and
+              reproducible experiments.
             </p>
             <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
-              <div><p className="text-3xl font-bold text-gradient">6.98</p><p className="text-xs text-muted-foreground">CGPA / 10</p></div>
-              <div><p className="text-3xl font-bold text-gradient">3+</p><p className="text-xs text-muted-foreground">Internships</p></div>
-              <div><p className="text-3xl font-bold text-gradient">11</p><p className="text-xs text-muted-foreground">Certifications</p></div>
-              <div><p className="text-3xl font-bold text-gradient">86%</p><p className="text-xs text-muted-foreground">EEG Model Acc.</p></div>
+              <div>
+                <p className="text-3xl font-bold text-gradient">6.98</p>
+                <p className="text-xs text-muted-foreground">CGPA / 10</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-gradient">3+</p>
+                <p className="text-xs text-muted-foreground">Internships</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-gradient">11</p>
+                <p className="text-xs text-muted-foreground">Certifications</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-gradient">86%</p>
+                <p className="text-xs text-muted-foreground">EEG Model Acc.</p>
+              </div>
             </div>
           </Card>
           <Card className="border-border/60 bg-card/50 p-8 shadow-card">
@@ -320,7 +367,10 @@ const Index = () => {
       <Section id="experience" icon={Briefcase} label="02 — Experience" title="Internships">
         <div className="space-y-4">
           {experience.map((e) => (
-            <Card key={e.company} className="group border-border/60 bg-card/50 p-6 shadow-card transition-all hover:border-primary/40 hover:shadow-glow md:p-8">
+            <Card
+              key={e.company}
+              className="group border-border/60 bg-card/50 p-6 shadow-card transition-all hover:border-primary/40 hover:shadow-glow md:p-8"
+            >
               <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
                 <div>
                   <h3 className="text-xl font-semibold">{e.role}</h3>
@@ -330,7 +380,10 @@ const Index = () => {
               </div>
               <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                 {e.points.map((p) => (
-                  <li key={p} className="flex gap-3"><span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />{p}</li>
+                  <li key={p} className="flex gap-3">
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                    {p}
+                  </li>
                 ))}
               </ul>
             </Card>
@@ -342,7 +395,10 @@ const Index = () => {
       <Section id="projects" icon={Brain} label="03 — Projects" title="Selected work">
         <div className="grid gap-6 md:grid-cols-3">
           {projects.map((p) => (
-            <Card key={p.name} className="group flex flex-col border-border/60 bg-card/50 p-6 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow">
+            <Card
+              key={p.name}
+              className="group flex flex-col border-border/60 bg-card/50 p-6 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow"
+            >
               <div className="mb-4 h-32 w-full overflow-hidden rounded-lg border border-border/60 bg-gradient-to-br from-secondary/60 to-secondary/20">
                 <ProjectAnimation kind={p.anim} />
               </div>
@@ -361,12 +417,7 @@ const Index = () => {
                       className="inline-flex items-center gap-1 rounded-md border border-border bg-secondary/40 px-2 py-0.5 font-mono text-[10px]"
                     >
                       {slug && (
-                        <img
-                          src={`https://cdn.simpleicons.org/${slug}`}
-                          alt=""
-                          className="h-3 w-3"
-                          loading="lazy"
-                        />
+                        <img src={`https://cdn.simpleicons.org/${slug}`} alt="" className="h-3 w-3" loading="lazy" />
                       )}
                       {s}
                     </span>
@@ -382,7 +433,10 @@ const Index = () => {
       <Section id="certifications" icon={Award} label="04 — Certifications" title="Continuous learning">
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {certifications.map((c) => (
-            <div key={c.name} className="flex items-start gap-3 rounded-lg border border-border/60 bg-card/40 p-4 transition-colors hover:border-primary/40">
+            <div
+              key={c.name}
+              className="flex items-start gap-3 rounded-lg border border-border/60 bg-card/40 p-4 transition-colors hover:border-primary/40"
+            >
               <Award className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
               <div>
                 <p className="text-sm font-medium leading-snug">{c.name}</p>
@@ -416,14 +470,27 @@ const Index = () => {
             Open to SDE, full-stack, and applied ML roles. Reach out anytime.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Button asChild size="lg" className="bg-gradient-primary text-primary-foreground shadow-glow hover:opacity-90">
-              <a href="mailto:psmishra648@gmail.com"><Mail className="mr-2 h-4 w-4" />psmishra648@gmail.com</a>
+            <Button
+              asChild
+              size="lg"
+              className="bg-gradient-primary text-primary-foreground shadow-glow hover:opacity-90"
+            >
+              <a href="mailto:psmishra648@gmail.com">
+                <Mail className="mr-2 h-4 w-4" />
+                psmishra648@gmail.com
+              </a>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <a href="https://linkedin.com/" target="_blank" rel="noreferrer"><Linkedin className="mr-2 h-4 w-4" />LinkedIn</a>
+              <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
+                <Linkedin className="mr-2 h-4 w-4" />
+                LinkedIn
+              </a>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <a href="https://github.com/" target="_blank" rel="noreferrer"><Github className="mr-2 h-4 w-4" />GitHub</a>
+              <a href="https://github.com/" target="_blank" rel="noreferrer">
+                <Github className="mr-2 h-4 w-4" />
+                GitHub
+              </a>
             </Button>
           </div>
         </div>
