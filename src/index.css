@@ -254,24 +254,27 @@ All colors MUST be HSL.
   50% { opacity: 1; transform: scale(1.2); }
 }
 
-/* Image-mascot animations: keep movement small & local */
+/* Image-mascot animations */
 @layer utilities {
-  .anim-mascot-wave-img { animation: mascot-bob-tilt 2.4s ease-in-out infinite; transform-origin: 70% 90%; }
-  .anim-mascot-cheer-img { animation: mascot-cheer-img 1.2s ease-in-out infinite; transform-origin: center bottom; }
-  /* Focused sitting pose: tiny head/shoulder nod only, no positional drift */
-  .anim-mascot-focus { animation: mascot-focus 3.6s ease-in-out infinite; transform-origin: 50% 80%; }
+  .anim-mascot-wave-img { animation: mascot-wave-img 2s ease-in-out infinite; transform-origin: 50% 95%; }
+  .anim-mascot-cheer-img { animation: mascot-cheer-img 1s ease-in-out infinite; transform-origin: center bottom; }
+  .anim-mascot-focus { animation: mascot-focus 2.8s ease-in-out infinite; transform-origin: 50% 80%; }
 }
-@keyframes mascot-bob-tilt {
-  0%, 100% { transform: translateY(0) rotate(-1.5deg); }
-  50% { transform: translateY(-3px) rotate(1.5deg); }
+@keyframes mascot-wave-img {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-6px) rotate(3deg); }
 }
 @keyframes mascot-cheer-img {
   0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-6px) scale(1.04); }
+  50% { transform: translateY(-10px) scale(1.05); }
 }
 @keyframes mascot-focus {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-1.5px) rotate(0.6deg); }
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-2px) rotate(1deg); }
+}
+@keyframes mascot-bob {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-6px) rotate(2deg); }
 }
 
 /* ========== Coding setup background ========== */
