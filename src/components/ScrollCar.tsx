@@ -121,7 +121,7 @@ export const ScrollCar = ({ sectionIds }: { sectionIds: string[] }) => {
   if (!vw || !vh) return null;
 
   return (
-    <div aria-hidden className="pointer-events-none fixed inset-0 -z-[5] hidden md:block">
+    <div aria-hidden className="pointer-events-none fixed inset-0 z-[30] hidden md:block opacity-90 mix-blend-normal">
       <svg width={vw} height={vh} className="absolute inset-0">
         {/* road glow */}
         <path
