@@ -237,6 +237,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <CustomCursor />
+      <CodeRainBg />
+      <ScrollCar sectionIds={["top", "about", "experience", "education", "projects", "certifications", "extracurricular", "contact"]} />
 
       {/* Editable background watermark */}
       <div
