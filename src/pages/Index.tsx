@@ -314,7 +314,7 @@ const Index = () => {
               <span className="text-primary">|</span> Applied AI/ML
             </p>
             <p className="max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              B.Tech (IT) student at <span className="text-foreground">KIIT (2022–2026, CGPA 6.98/10)</span> building
+              B.Tech (IT) student at <span className="text-foreground">KIIT (2022–2026)</span> building
               scalable full-stack applications using{" "}
               <span className="text-foreground">FastAPI, React, Docker, and AWS</span>, with applied machine learning
               experience in healthcare imaging and computer vision systems.
@@ -376,11 +376,7 @@ const Index = () => {
               My ML work sits on top of a solid SDE foundation: containerized services, CI-friendly pipelines, and
               reproducible experiments.
             </p>
-            <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
-              <div>
-                <p className="text-3xl font-bold text-gradient">6.98</p>
-                <p className="text-xs text-muted-foreground">CGPA / 10</p>
-              </div>
+            <div className="mt-6 grid grid-cols-3 gap-4">
               <div>
                 <p className="text-3xl font-bold text-gradient">3+</p>
                 <p className="text-xs text-muted-foreground">Internships</p>
