@@ -1,10 +1,11 @@
 import React from "react";
-
-/**
- * Hooded developer mascot — a friendly human in a hoodie.
- * Multiple action variants so each section gets its own pose.
- * Pure SVG + CSS animations.
- */
+import mascotWave from "@/assets/mascot-wave.png";
+import mascotPresent from "@/assets/mascot-present.png";
+import mascotCode from "@/assets/mascot-code.png";
+import mascotThink from "@/assets/mascot-think.png";
+import mascotCelebrate from "@/assets/mascot-celebrate.png";
+import mascotStretch from "@/assets/mascot-stretch.png";
+import mascotSitting from "@/assets/mascot-sitting.png";
 
 export type MascotAction =
   | "wave"
@@ -14,6 +15,28 @@ export type MascotAction =
   | "celebrate"
   | "stretch"
   | "sit-laptop";
+
+const sources: Record<MascotAction, string> = {
+  wave: mascotWave,
+  present: mascotPresent,
+  code: mascotCode,
+  think: mascotThink,
+  celebrate: mascotCelebrate,
+  stretch: mascotStretch,
+  "sit-laptop": mascotSitting,
+};
+
+// Subtle, action-specific animations for the standing variants.
+// The sitting variant stays still (only a tiny laptop-typing nod) per request.
+const animClass: Record<MascotAction, string> = {
+  wave: "anim-mascot-wave-img",
+  present: "anim-mascot-bob",
+  code: "anim-mascot-bob",
+  think: "anim-mascot-bob",
+  celebrate: "anim-mascot-cheer-img",
+  stretch: "anim-mascot-bob",
+  "sit-laptop": "anim-mascot-focus",
+};
 
 const SKIN = "#f1c8a7";
 const SKIN_DARK = "#d9a884";
@@ -216,11 +239,12 @@ export const SectionMascot = ({
   message?: string;
   className?: string;
 }) => {
+  const isSitting = action === "sit-laptop";
   return (
     <div
       aria-hidden
       className={`relative shrink-0 ${
-        action === "sit-laptop" ? "h-28 w-32 md:h-40 md:w-44" : "h-36 w-24 md:h-48 md:w-32"
+        isSitting ? "h-28 w-28 md:h-40 md:w-40" : "h-36 w-28 md:h-48 md:w-36"
       } ${className}`}
     >
       {message && (
@@ -229,7 +253,12 @@ export const SectionMascot = ({
           <span className="absolute -left-1 top-3 h-2 w-2 rotate-45 border-b border-l border-border/60 bg-card/90" />
         </div>
       )}
-      <Mascot action={action} />
+      <img
+        src={sources[action]}
+        alt=""
+        className={`h-full w-full object-contain ${animClass[action]}`}
+        draggable={false}
+      />
     </div>
   );
 };
