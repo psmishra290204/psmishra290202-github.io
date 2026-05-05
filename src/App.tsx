@@ -16,7 +16,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          {C:\Users\KIIT\OneDrive\Desktop\Riku_Docx}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
