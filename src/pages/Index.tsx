@@ -25,7 +25,6 @@ import {
 const strengths = ["Python", "Java", "Full-Stack Development", "DSA", "React.js", "MongoDB"];
 
 const techStack = [
-  "VS Code",
   "React",
   "Docker",
   "AWS",
