@@ -2,6 +2,7 @@ import { CustomCursor } from "@/components/CustomCursor";
 import { ProjectAnimation } from "@/components/ProjectAnimation";
 import { CodeRainBg } from "@/components/CodeRainBg";
 import { SectionMascot } from "@/components/SectionMascot";
+import profilePhoto from "@/assets/riku-photo.jpg";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
