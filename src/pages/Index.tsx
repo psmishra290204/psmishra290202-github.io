@@ -2,6 +2,7 @@ import { CustomCursor } from "@/components/CustomCursor";
 import { ProjectAnimation } from "@/components/ProjectAnimation";
 import { CodeRainBg } from "@/components/CodeRainBg";
 import { SectionMascot } from "@/components/SectionMascot";
+import profilePhoto from "@/assets/riku-photo.jpg";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -395,18 +396,16 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Animated profile photo placeholder */}
+          {/* Profile photo */}
           <div className="relative mx-auto h-64 w-64 md:h-80 md:w-80" data-cursor-hover>
             <div className="absolute inset-0 rounded-full ring-gradient blur-md opacity-70" />
             <div className="absolute inset-0 rounded-full ring-gradient" />
             <div className="absolute inset-[6px] rounded-full bg-background" />
-            <div className="absolute inset-[10px] flex items-center justify-center rounded-full bg-secondary text-muted-foreground">
-              <div className="text-center">
-                <Sparkles className="mx-auto mb-2 h-8 w-8 text-primary" />
-                <p className="font-mono text-xs uppercase tracking-widest">Photo</p>
-                <p className="font-mono text-[10px] text-muted-foreground/60">add /public/profile.jpg</p>
-              </div>
-            </div>
+            <img
+              src={profilePhoto}
+              alt="Parthasarathi Mishra"
+              className="absolute inset-[10px] h-[calc(100%-20px)] w-[calc(100%-20px)] rounded-full object-cover"
+            />
           </div>
         </div>
       </header>

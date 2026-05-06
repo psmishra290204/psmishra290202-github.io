@@ -16,7 +16,6 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {C:\Users\KIIT\OneDrive\Desktop\Riku_Docx}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
