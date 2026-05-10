@@ -451,9 +451,9 @@ const Index = () => {
                 {
                   title: "B.Tech, Information Technology",
                   sub: "KIIT University · 2022–2026",
-                  score: "CGPA 6.98 / 10",
+                  score: "CGPA 7.11 / 10",
                   // Replace # with the link to your certificate / marksheet
-                  link: "https://drive.google.com/file/d/1fU59t0nluMLuflOTE5DJ-tsfcMyixnuA/view?usp=drive_link",
+                  link: "https://drive.google.com/file/d/10DSdhze5FeXMbglexgnT6ucXh6Zjh6c_/view?usp=sharing",
                 },
                 {
                   title: "HSC (Class XII, CBSE)",
