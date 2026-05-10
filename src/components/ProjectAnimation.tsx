@@ -1,8 +1,11 @@
 import React from "react";
 
-export const ProjectAnimation = ({ kind }: { kind: "pose" | "eeg" | "eye" }) => {
+import React from "react";
+
+export const ProjectAnimation = ({ kind }: { kind: "pose" | "eeg" | "eye" | "coming" }) => {
   if (kind === "pose") return <PoseAnim />;
   if (kind === "eeg") return <EEGAnim />;
+  if (kind === "coming") return <ComingAnim />;
   return <EyeAnim />;
 };
 
