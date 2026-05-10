@@ -234,3 +234,32 @@ All colors MUST be HSL.
   0%, 100% { transform: translate3d(0, 0, 0); }
   50% { transform: translate3d(0, -12px, 0); }
 }
+
+/* ========== Coming Soon animation ========== */
+@layer utilities {
+  .anim-coming-dot {
+    animation: coming-dot-pulse 1.2s ease-in-out infinite;
+    transform-origin: center;
+  }
+  .anim-coming-bar {
+    animation: coming-bar-fill 2.4s ease-in-out infinite;
+    transform-origin: left;
+  }
+  .anim-coming-bracket {
+    animation: coming-bracket-float 3s ease-in-out infinite;
+    transform-origin: center;
+  }
+}
+@keyframes coming-dot-pulse {
+  0%, 100% { opacity: 0.25; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.3); }
+}
+@keyframes coming-bar-fill {
+  0% { transform: scaleX(0); opacity: 0.5; }
+  50% { transform: scaleX(0.6); opacity: 0.9; }
+  100% { transform: scaleX(1); opacity: 0.5; }
+}
+@keyframes coming-bracket-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
