@@ -1,7 +1,5 @@
 import React from "react";
 
-import React from "react";
-
 export const ProjectAnimation = ({ kind }: { kind: "pose" | "eeg" | "eye" | "coming" }) => {
   if (kind === "pose") return <PoseAnim />;
   if (kind === "eeg") return <EEGAnim />;
@@ -87,6 +85,39 @@ const EyeAnim = () => (
       </g>
       <rect x="0" y="0" width="200" height="3" fill="hsl(var(--primary)/0.6)" className="anim-eye-scan" />
     </g>
+  </svg>
+);
+
+const ComingAnim = () => (
+  <svg viewBox="0 0 200 120" preserveAspectRatio="xMidYMid meet" className="block h-full w-full">
+    <defs>
+      <linearGradient id="comingG" x1="0" x2="1">
+        <stop offset="0%" stopColor="hsl(var(--primary))" />
+        <stop offset="100%" stopColor="hsl(var(--accent))" />
+      </linearGradient>
+      <linearGradient id="comingBar" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stopColor="hsl(var(--primary))" />
+        <stop offset="100%" stopColor="hsl(var(--accent))" />
+      </linearGradient>
+    </defs>
+    {/* Terminal window */}
+    <rect x="25" y="15" width="150" height="90" rx="6" stroke="url(#comingG)" strokeWidth="1.5" fill="none" opacity="0.6" />
+    {/* Title bar */}
+    <line x1="25" y1="30" x2="175" y2="30" stroke="url(#comingG)" strokeWidth="1" opacity="0.4" />
+    <circle cx="38" cy="22.5" r="2.5" fill="hsl(var(--primary)/0.5)" className="anim-coming-dot" style={{ animationDelay: "0s" }} />
+    <circle cx="47" cy="22.5" r="2.5" fill="hsl(var(--primary)/0.5)" className="anim-coming-dot" style={{ animationDelay: "0.3s" }} />
+    <circle cx="56" cy="22.5" r="2.5" fill="hsl(var(--primary)/0.5)" className="anim-coming-dot" style={{ animationDelay: "0.6s" }} />
+    {/* Prompt + text */}
+    <text x="38" y="55" fontFamily="monospace" fontSize="10" fill="hsl(var(--primary))" opacity="0.9">&gt;</text>
+    <text x="50" y="55" fontFamily="monospace" fontSize="10" fill="hsl(var(--foreground))" opacity="0.9">coming_soon</text>
+    {/* Blinking cursor */}
+    <rect x="138" y="47" width="6" height="10" rx="1" fill="hsl(var(--primary))" className="anim-cursor-blink" />
+    {/* Progress bar outline */}
+    <rect x="50" y="72" width="100" height="6" rx="3" stroke="url(#comingG)" strokeWidth="1" fill="none" opacity="0.5" />
+    {/* Animated progress fill */}
+    <rect x="50" y="72" width="100" height="6" rx="3" fill="url(#comingBar)" className="anim-coming-bar" opacity="0.8" />
+    {/* Code brackets */}
+    <text x="85" y="100" fontFamily="monospace" fontSize="14" fill="url(#comingG)" opacity="0.35" className="anim-coming-bracket">{'{ }'}</text>
   </svg>
 );
 
