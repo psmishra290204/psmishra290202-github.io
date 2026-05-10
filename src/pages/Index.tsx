@@ -124,6 +124,14 @@ const projects = [
       "Modular Keras pipeline for retraining",
     ],
   },
+  {
+    name: "Coming Soon",
+    tag: "Work in Progress",
+    desc: "A new project is under development. Stay tuned for something exciting!",
+    stack: ["TBD"],
+    anim: "coming" as const,
+    results: [],
+  },
 ];
 
 const certifications = [
@@ -221,28 +229,40 @@ type Project = (typeof projects)[number];
 
 const ProjectCard = ({ p }: { p: Project }) => {
   const [open, setOpen] = useState(false);
+  const isComingSoon = p.name === "Coming Soon";
   return (
-    <Card className="group flex flex-col border-border/60 bg-card/50 p-5 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow sm:p-6">
+    <Card className={`group flex flex-col border-border/60 p-5 shadow-card transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-glow sm:p-6 ${isComingSoon ? "bg-muted/30" : "bg-card/50"}`}>
       <div className="mb-4 aspect-[5/3] w-full overflow-hidden rounded-lg border border-border/60 bg-gradient-to-br from-secondary/60 to-secondary/20">
         <ProjectAnimation kind={p.anim} />
       </div>
       <div className="mb-2 flex items-start justify-between gap-2">
-        <h3 className="text-lg font-semibold">{p.name}</h3>
-        <ExternalLink className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
+        <h3 className={`text-lg font-semibold ${isComingSoon ? "text-muted-foreground" : ""}`}>{p.name}</h3>
+        {!isComingSoon && (
+          <ExternalLink className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
+        )}
       </div>
       <p className="font-mono text-[11px] uppercase tracking-widest text-primary">{p.tag}</p>
       <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
 
-      <button
-        type="button"
-        onClick={() => setOpen((v) => !v)}
-        aria-expanded={open}
-        className="mt-4 inline-flex items-center justify-between gap-2 rounded-md border border-border/60 bg-secondary/40 px-3 py-2 text-xs font-medium text-foreground transition-colors hover:border-primary/50 hover:text-primary"
-        data-cursor-hover
-      >
-        <span>{open ? "Hide details" : "View details"}</span>
-        <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
-      </button>
+      {!isComingSoon && (
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          className="mt-4 inline-flex items-center justify-between gap-2 rounded-md border border-border/60 bg-secondary/40 px-3 py-2 text-xs font-medium text-foreground transition-colors hover:border-primary/50 hover:text-primary"
+          data-cursor-hover
+        >
+          <span>{open ? "Hide details" : "View details"}</span>
+          <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${open ? "rotate-180" : ""}`} />
+        </button>
+      )}
+
+      {isComingSoon && (
+        <div className="mt-4 inline-flex items-center gap-2 rounded-md border border-dashed border-border/80 bg-secondary/30 px-3 py-2 text-xs font-medium text-muted-foreground">
+          <Sparkles className="h-3.5 w-3.5" />
+          <span>Something awesome is brewing...</span>
+        </div>
+      )}
 
       <div
         className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
